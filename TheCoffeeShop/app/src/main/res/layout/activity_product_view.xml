@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-   * Grocery App
-   * https://github.com/quintuslabs/GroceryStore
-   * Created on 18-Feb-2019.
-   * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
-   -->
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:layout_width="match_parent"
@@ -83,7 +78,7 @@
                             android:id="@+id/apv_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="iPhone 6Sjkgjkjhahk fhkafhkj"
+                            android:text="cà phê đen"
                             android:textColor="@color/colorTex"
                             android:textSize="21dp"
                             android:visibility="visible" />

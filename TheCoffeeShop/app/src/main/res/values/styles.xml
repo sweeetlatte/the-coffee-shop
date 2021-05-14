@@ -1,11 +1,5 @@
 <resources>
-    <!--
-       * Grocery App
-       * https://github.com/quintuslabs/GroceryStore
-       * Created on 18-Feb-2019.
-       * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
-       -->
-    <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

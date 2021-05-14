@@ -12,17 +12,15 @@ public class Data {
 
 
     public List<Offer> getOfferList() {
-        Offer offer = new Offer("http://1.bp.blogspot.com/-MMt-60IWEdw/VqZsh45Dv8I/AAAAAAAAMHg/70D9tVowlyc/s1600/askmegrocery-republic-day-offer.jpg");
+        Offer offer = new Offer("https://cdn.dayphache.edu.vn/wp-content/uploads/2019/05/hinh-tao-hinh-3d-ca-pha-latte.jpg");
         offerList.add(offer);
-        offer = new Offer("http://www.lootkaro.com/wp-content/uploads/2016/05/as1.jpg");
+        offer = new Offer("https://www.takadada.com/wp-content/uploads/2019/07/hinh-anh-ly-ca-phe-48.jpg");
         offerList.add(offer);
-        offer = new Offer("https://453xbcknr3t3ahr522mms518-wpengine.netdna-ssl.com/wp-content/themes/iga-west/images/banner-save-more.jpg");
+        offer = new Offer("https://cdn.dayphache.edu.vn/wp-content/uploads/2019/01/do-uong-nao-se-thong-tri-thi-truong-nam-2021.jpg");
         offerList.add(offer);
-        offer = new Offer("https://images-eu.ssl-images-amazon.com/images/G/31/img16/Grocery/SVD/July18/750x375.png");
+        offer = new Offer("https://tred.vn/wp-content/uploads/2019/12/DSC09789.jpg");
         offerList.add(offer);
-        offer = new Offer("https://images-eu.ssl-images-amazon.com/images/G/31/img16/Grocery/BreakfastStore/kmande_2018-06-15T12-00_f010a5_1121973_grocery_750x375.jpg");
-        offerList.add(offer);
-        offer = new Offer("http://www.enjoygrocery.com/images/enjoygrocery-offer.jpg");
+        offer = new Offer("https://tred.vn/wp-content/uploads/2019/12/DSC00117-copy.jpg");
         offerList.add(offer);
 
 

@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-   * Grocery App
-   * https://github.com/quintuslabs/GroceryStore
-   * Created on 18-Feb-2019.
-   * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
-   -->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FA5258</color>
+    <color name="colorPrimary">#B78546</color>
     <color name="colorPrimaryDark">#FAD23C</color>
     <color name="colorAccent">#ff009688</color>
     <color name="red_400">#FC5952</color>
