@@ -15,29 +15,25 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/bg_3" />
+            android:layout_alignParentTop="true" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/bg_2" />
+            android:layout_alignParentRight="true" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/bg_1" />
+            android:layout_alignParentBottom="true" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/graphe" />
+            android:layout_alignParentBottom="true" />
 
     </RelativeLayout>
 

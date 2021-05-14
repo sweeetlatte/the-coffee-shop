@@ -34,10 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Santosh Dash on 28/04/19.
- * www.quintuslabs.info
- */
+
 public class NotificationUtils {
 
     private static final String NOTIFICATION_CHANNEL_ID = "9000";
