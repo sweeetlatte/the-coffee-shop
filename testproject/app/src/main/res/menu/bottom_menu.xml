@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/mainActivity"/>
+
+    <item
+        android:title="Menu"
+        android:icon="@drawable/ic_menu"
+        android:id="@+id/menuFragment"/>
+
+    <item
+        android:title="Reservation"
+        android:icon="@drawable/ic_reservation"
+        android:id="@+id/reservationFragment"/>
+
+    <item
+        android:title="Account"
+        android:icon="@drawable/ic_account"
+        android:id="@+id/accountFragment"/>
+
+</menu>

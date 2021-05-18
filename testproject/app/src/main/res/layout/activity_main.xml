@@ -8,49 +8,38 @@
     tools:context=".Activity.MainActivity">
 
     <LinearLayout
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@android:color/white">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/logo"
-                    android:layout_marginBottom="50dp"/>
-            </LinearLayout>
-        </LinearLayout>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="helooooooooooooooooo"
+            android:layout_marginBottom="10dp"
             android:height="30dp"
-            android:layout_marginBottom="10dp"/>
+            android:text="hello" />
+
+
         <ViewFlipper
             android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@color/purple_500"
-            />
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:src="@drawable/slidebar"/>-->
+            android:background="@color/purple_500" />
+
         <LinearLayout
-            android:layout_marginTop="10dp"
-            android:gravity="center|bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="center|bottom"
             android:orientation="vertical">
 
             <LinearLayout
@@ -58,23 +47,27 @@
                 android:layout_height="match_parent"
                 android:background="@color/purple_700"
                 android:orientation="vertical">
+
                 <TextView
-                    android:paddingTop="50dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="New Products"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewNewProducts"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/black"/>
         </LinearLayout>
-
     </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menu">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 </RelativeLayout>
