@@ -14,4 +14,6 @@
     <color name="color">#767578</color>
     <color name="agendacolor">#8E9097</color>
     <color name="colorPrimary">#603813</color>
+
+    <color name="lightCoffee">#d1c4ba</color>
 </resources>
