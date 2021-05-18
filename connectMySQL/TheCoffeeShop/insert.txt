@@ -1,0 +1,27 @@
+INSERT INTO loaisanpham(TenLSP)
+VALUES("Coffee");
+INSERT INTO loaisanpham(TenLSP)
+VALUES("Tee");
+INSERT INTO loaisanpham(TenLSP)
+VALUES("Smoothie")
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham1", 100, 1, 50000, "", 2, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham2", 100, 1, 50000, "", 3, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham3", 100, 1, 50000, "", 4, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham4", 100, 1, 50000, "", 2, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham5", 100, 1, 50000, "", 3, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham6", 100, 1, 50000, "", 4, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
+
+INSERT INTO thucdon(TenMon,SoLuong, TrangThai, Gia, TuyChon, MaLSP, srcImg)
+VALUES("SanPham7", 100, 1, 50000, "", 4, "https://cubes-asia.com/uploads/editer/images/happy-may-day-1(1).png");
