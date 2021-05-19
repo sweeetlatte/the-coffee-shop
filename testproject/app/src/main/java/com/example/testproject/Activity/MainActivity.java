@@ -35,10 +35,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    RecyclerView recyclerViewNewProducts;
-    ViewFlipper viewFlipper;
-    ArrayList<Product> productArrayList;
-    ProductAdapter productAdapter;
+//    RecyclerView recyclerViewNewProducts;
+//    ViewFlipper viewFlipper;
+//    ArrayList<Product> productArrayList;
+//    ProductAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

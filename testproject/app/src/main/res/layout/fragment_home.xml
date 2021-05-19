@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".reservationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:height="30dp"-->
+<!--                    android:text="Search" />-->
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="210dp">
+        </androidx.viewpager2.widget.ViewPager2>
+
+<!--                <ViewFlipper-->
+<!--                    android:id="@+id/viewFlipper"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="180dp"-->
+<!--                    android:background="@color/purple_500" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:gravity="center|bottom"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="New Products"-->
+<!--                        android:textSize="20sp" />-->
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recyclerViewNewProducts"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content" />-->
+<!--                </LinearLayout>-->
+
+    </LinearLayout>
+
+</RelativeLayout>
