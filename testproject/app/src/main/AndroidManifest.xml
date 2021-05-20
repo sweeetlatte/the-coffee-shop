@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.testproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,15 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Testproject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.LoginActivity"
-            tools:ignore="Instantiatable">
+        <activity android:name=".Activity.HomeActivity"></activity>
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"></activity>
     </application>
 
 </manifest>
