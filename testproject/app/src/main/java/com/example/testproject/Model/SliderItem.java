@@ -1,4 +1,4 @@
-package com.example.testproject.Activity;
+package com.example.testproject.Model;
 
 public class SliderItem {
 

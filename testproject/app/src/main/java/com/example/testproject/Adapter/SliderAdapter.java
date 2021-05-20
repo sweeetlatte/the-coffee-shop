@@ -1,4 +1,4 @@
-package com.example.testproject.Activity;
+package com.example.testproject.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.testproject.Model.SliderItem;
 import com.example.testproject.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 
