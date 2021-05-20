@@ -12,17 +12,17 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.testproject.MenuFragment"
+        android:name="com.example.testproject.Fragment.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
     <fragment
         android:id="@+id/reservationFragment"
-        android:name="com.example.testproject.reservationFragment"
+        android:name="com.example.testproject.Adapter.reservationFragment"
         android:label="fragment_reservation"
         tools:layout="@layout/fragment_reservation" />
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.testproject.AccountFragment"
+        android:name="com.example.testproject.Fragment.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
 </navigation>
