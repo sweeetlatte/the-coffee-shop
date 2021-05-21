@@ -106,9 +106,7 @@ public class HomeFragment extends Fragment {
 //                        } catch (JSONException e) {
 //                            e.printStackTrace();
 //                        }
-//
 //                    }
-//
 //                }
 //            }
 //        }, new Response.ErrorListener() {
