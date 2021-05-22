@@ -18,6 +18,7 @@ package com.example.testproject.Fragment;
         import android.widget.Toast;
         import android.widget.ViewFlipper;
 
+        import com.android.volley.Request;
         import com.android.volley.RequestQueue;
         import com.android.volley.Response;
         import com.android.volley.VolleyError;
@@ -44,79 +45,70 @@ public class HomeFragment extends Fragment {
     ProductAdapter productAdapter;
     private ViewPager2 viewPager2;
     View view;
+    int id = 0;
+    String nameProduct = "";
+    Integer priceProdut = 0;
+    String srcImg = "";
 
     public HomeFragment() {
         // Required empty public constructor
     }
     @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof MainActivity)
-//            this.listener = (DemoFragmentInterface) context;
-//        else
-//            throw new RuntimeException(context.toString() + "must implement onViewSelected!");
-//    }
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
-        //Inflate the layout for this fragment
-
-        //  AcctionViewFlipper();
-//        GetDataNewProduct();
         view = inflater.inflate(R.layout.fragment_home, container, false);
-//        homeActivity = (HomeActivity) getActivity();
         InitUI(view);
         AcctionViewFlipper(view);
+        GetDataNewProduct();
         return view;
     }
     private void InitUI(View view){
         recyclerViewNewProducts = (RecyclerView) view.findViewById(R.id.recyclerViewNewProducts);
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper);
         productArrayList = new ArrayList<>();
-     productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-      productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
+        productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
+        productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
 
         productAdapter = new ProductAdapter(getContext(),productArrayList);
         recyclerViewNewProducts.setHasFixedSize(true);
         recyclerViewNewProducts.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerViewNewProducts.setAdapter(productAdapter);
     }
-//    private void GetDataNewProduct() {
-//        RequestQueue requestQueue = Volley.newRequestQueue(homeActivity);
-//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Server.pathGetNewProduct, new Response.Listener<JSONArray>() {
-//            @Override
-//            public void onResponse(JSONArray response) {
-//                if(response != null){
-//                    int id = 0;
-//                    String nameProduct = "";
-//                    Integer priceProdut = 0;
-//                    String srcImg = "";
-//                    for(int i = 0; i< response.length(); i ++){
-//                        try {
-//                            JSONObject jsonObject = response.getJSONObject(i);
-//                            id = jsonObject.getInt("id");
-//                            nameProduct = jsonObject.getString("name");
-//                            priceProdut = jsonObject.getInt(" price");
-//                            srcImg = jsonObject.getString("srcImg");
-//                            productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg));
-//
-//                            productAdapter.notifyDataSetChanged();
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(homeActivity, error.toString(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        requestQueue.add(jsonArrayRequest);
-//    }
+    private void GetDataNewProduct() {
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        JsonArrayRequest jsonArrayRequest =  new JsonArrayRequest(Request.Method.GET, Server.pathGetNewProduct, null,
+                new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                if(response != null){
+                    for(int i = 0; i< response.length(); i ++){
+                        try {
+                            JSONObject jsonObject = response.getJSONObject(i);
+                            id = jsonObject.getInt("id");
+                            nameProduct = jsonObject.getString("name");
+                            priceProdut = jsonObject.getInt(" price");
+                            srcImg = jsonObject.getString("srcImg");
+                            productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg));
+
+                            productAdapter.notifyDataSetChanged();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
+    }
     private void AcctionViewFlipper( View view) {
         ArrayList<String> list = new ArrayList<>();
         list.add("https://i.pinimg.com/originals/f8/81/ad/f881ad2778cc7d7c88791e14c9419b52.jpg");
