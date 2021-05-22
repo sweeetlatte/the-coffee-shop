@@ -7,17 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.testproject.Adapter.reservationFragment;
 import com.example.testproject.Fragment.AccountFragment;
 import com.example.testproject.Fragment.HomeFragment;
 import com.example.testproject.Fragment.MenuFragment;
+import com.example.testproject.Fragment.ReservationFragment;
 import com.example.testproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new MenuFragment();
                             break;
                         case R.id.reservation:
-                            fragment = new reservationFragment();
+                            fragment = new ReservationFragment();
                             break;
                         case R.id.account:
                             fragment = new AccountFragment();
