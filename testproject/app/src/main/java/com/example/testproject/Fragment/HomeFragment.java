@@ -9,10 +9,6 @@ package com.example.testproject.Fragment;
         import androidx.recyclerview.widget.RecyclerView;
         import androidx.viewpager2.widget.ViewPager2;
 
-<<<<<<< HEAD
-        import android.util.Log;
-=======
->>>>>>> add folder fragment
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
@@ -22,10 +18,6 @@ package com.example.testproject.Fragment;
         import android.widget.Toast;
         import android.widget.ViewFlipper;
 
-<<<<<<< HEAD
-        import com.android.volley.Request;
-=======
->>>>>>> add folder fragment
         import com.android.volley.RequestQueue;
         import com.android.volley.Response;
         import com.android.volley.VolleyError;
@@ -52,21 +44,11 @@ public class HomeFragment extends Fragment {
     ProductAdapter productAdapter;
     private ViewPager2 viewPager2;
     View view;
-<<<<<<< HEAD
-    int id = 0;
-    String nameProduct = "";
-    Integer priceProdut = 0;
-    String srcImg = "";
-=======
->>>>>>> add folder fragment
 
     public HomeFragment() {
         // Required empty public constructor
     }
     @Override
-<<<<<<< HEAD
-
-=======
 //    public void onAttach(Context context) {
 //        super.onAttach(context);
 //        if (context instanceof MainActivity)
@@ -74,17 +56,10 @@ public class HomeFragment extends Fragment {
 //        else
 //            throw new RuntimeException(context.toString() + "must implement onViewSelected!");
 //    }
->>>>>>> add folder fragment
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
-<<<<<<< HEAD
-        view = inflater.inflate(R.layout.fragment_home, container, false);
-        InitUI(view);
-        AcctionViewFlipper(view);
-        GetDataNewProduct();
-=======
         //Inflate the layout for this fragment
 
         //  AcctionViewFlipper();
@@ -93,61 +68,20 @@ public class HomeFragment extends Fragment {
 //        homeActivity = (HomeActivity) getActivity();
         InitUI(view);
         AcctionViewFlipper(view);
->>>>>>> add folder fragment
         return view;
     }
     private void InitUI(View view){
         recyclerViewNewProducts = (RecyclerView) view.findViewById(R.id.recyclerViewNewProducts);
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper);
         productArrayList = new ArrayList<>();
-<<<<<<< HEAD
-//        productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-//        productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-=======
      productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
       productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
->>>>>>> add folder fragment
 
         productAdapter = new ProductAdapter(getContext(),productArrayList);
         recyclerViewNewProducts.setHasFixedSize(true);
         recyclerViewNewProducts.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerViewNewProducts.setAdapter(productAdapter);
     }
-<<<<<<< HEAD
-    public void GetDataNewProduct() {
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Server.pathGetNewProduct, null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        if (response != null) {
-                            for (int i = 0; i < response.length(); i++) {
-                                try {
-                                    JSONObject jsonObject = response.getJSONObject(i);
-                                    id = jsonObject.getInt("id");
-                                    nameProduct = jsonObject.getString("name");
-                                    priceProdut = Integer.parseInt( jsonObject.getString("price"));
-                                    srcImg = jsonObject.getString("srcImg");
-                                    productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg));
-                                    productAdapter.notifyDataSetChanged();
-                                    productAdapter.notifyDataSetChanged();
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        requestQueue.add(jsonArrayRequest);
-    };
-
-=======
 //    private void GetDataNewProduct() {
 //        RequestQueue requestQueue = Volley.newRequestQueue(homeActivity);
 //        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Server.pathGetNewProduct, new Response.Listener<JSONArray>() {
@@ -185,17 +119,12 @@ public class HomeFragment extends Fragment {
 //        });
 //        requestQueue.add(jsonArrayRequest);
 //    }
->>>>>>> add folder fragment
     private void AcctionViewFlipper( View view) {
         ArrayList<String> list = new ArrayList<>();
         list.add("https://i.pinimg.com/originals/f8/81/ad/f881ad2778cc7d7c88791e14c9419b52.jpg");
         list.add("https://images.foody.vn/res/g78/776667/prof/s576x330/foody-upload-api-foody-mobile-cafe-vuon-jpg-180911152838.jpg");
         list.add("https://res.klook.com/image/upload/fl_lossy.progressive/q_65/c_fill,w_1360/blogvn/2018/09/quan-cafe-dep-seoul.jpg");
         list.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToiDBkD64FYWFWXdHnetVfkkFVmdpFzjo6nw&usqp=CAU");
-<<<<<<< HEAD
-
-=======
->>>>>>> add folder fragment
         for (int i = 0; i < list.size(); i++){
             ImageView imageView = new ImageView(getContext());
             Picasso.get().load(list.get(i)).into(imageView);
