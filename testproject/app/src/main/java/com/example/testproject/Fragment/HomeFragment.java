@@ -111,10 +111,10 @@ public class HomeFragment extends Fragment {
     }
     private void AcctionViewFlipper( View view) {
         ArrayList<String> list = new ArrayList<>();
-        list.add("https://images.unsplash.com/photo-1561630439-2ebfb3f7bcef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
-        list.add("https://images.unsplash.com/photo-1617181669950-e0602ed26dbd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=970&q=80");
-        list.add("https://images.unsplash.com/photo-1471922597728-92f81bfe2445?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80");
-        list.add("https://images.unsplash.com/photo-1566156672382-81d2656bb838?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+        list.add("https://i.pinimg.com/originals/f8/81/ad/f881ad2778cc7d7c88791e14c9419b52.jpg");
+        list.add("https://images.foody.vn/res/g78/776667/prof/s576x330/foody-upload-api-foody-mobile-cafe-vuon-jpg-180911152838.jpg");
+        list.add("https://res.klook.com/image/upload/fl_lossy.progressive/q_65/c_fill,w_1360/blogvn/2018/09/quan-cafe-dep-seoul.jpg");
+        list.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToiDBkD64FYWFWXdHnetVfkkFVmdpFzjo6nw&usqp=CAU");
         for (int i = 0; i < list.size(); i++){
             ImageView imageView = new ImageView(getContext());
             Picasso.get().load(list.get(i)).into(imageView);
