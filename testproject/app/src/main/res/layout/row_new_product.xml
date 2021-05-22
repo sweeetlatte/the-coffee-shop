@@ -3,19 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         app:cardCornerRadius="4dp"
         android:layout_height="match_parent">
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="100dp"
                     android:id="@+id/imgProduct"
@@ -35,7 +39,11 @@
                     android:id="@+id/tvPriceProduct"
                     android:text="giá sp"
                     android:gravity="center"/>
+
             </LinearLayout>
+
         </FrameLayout>
+
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

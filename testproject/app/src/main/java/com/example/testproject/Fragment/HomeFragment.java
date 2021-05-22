@@ -1,6 +1,6 @@
 package com.example.testproject.Fragment;
 
-        import android.content.Context;
+import android.content.Context;
         import android.os.Bundle;
 
         import androidx.annotation.DrawableRes;
@@ -54,6 +54,10 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
+
+
+
+/////////////////////////////////    New Products
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
