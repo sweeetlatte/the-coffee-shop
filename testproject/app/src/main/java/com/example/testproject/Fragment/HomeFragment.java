@@ -3,6 +3,7 @@ package com.example.testproject.Fragment;
         import android.content.Context;
         import android.os.Bundle;
 
+        import androidx.annotation.DrawableRes;
         import androidx.annotation.Nullable;
         import androidx.fragment.app.Fragment;
         import androidx.recyclerview.widget.GridLayoutManager;
@@ -53,9 +54,8 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
+
     @Override
-
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
@@ -111,10 +111,10 @@ public class HomeFragment extends Fragment {
     }
     private void AcctionViewFlipper( View view) {
         ArrayList<String> list = new ArrayList<>();
-        list.add("https://i.pinimg.com/originals/f8/81/ad/f881ad2778cc7d7c88791e14c9419b52.jpg");
-        list.add("https://images.foody.vn/res/g78/776667/prof/s576x330/foody-upload-api-foody-mobile-cafe-vuon-jpg-180911152838.jpg");
-        list.add("https://res.klook.com/image/upload/fl_lossy.progressive/q_65/c_fill,w_1360/blogvn/2018/09/quan-cafe-dep-seoul.jpg");
-        list.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToiDBkD64FYWFWXdHnetVfkkFVmdpFzjo6nw&usqp=CAU");
+        list.add("https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80");
+        list.add("https://images.unsplash.com/photo-1496318447583-f524534e9ce1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1105&q=80");
+        list.add("https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+        list.add("https://images.unsplash.com/photo-1496582490020-60c1344c64aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1059&q=80");
         for (int i = 0; i < list.size(); i++){
             ImageView imageView = new ImageView(getContext());
             Picasso.get().load(list.get(i)).into(imageView);

@@ -40,7 +40,7 @@
             android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@drawable/radius_nav" />
+            android:background="@drawable/radius_slider" />
 
         <LinearLayout
             android:layout_width="match_parent"
