@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#d1c4ba</color>
+    <color name="black">#FF000000</color>
     <color name="purple_500">#633c18</color>
-    <color name="purple_700">#FF000000</color>
-    <color name="teal_200">#FFFFFFFF</color>
-    <color name="teal_700">#d1c4ba</color>
-    <color name="black">#633c18</color>
+    <color name="purple_700">#d1c4ba</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="teal_700">#d1c4ba</color>
+    <color name="dark_coffee">#633c18</color>
     <color name="background_color">#fff</color>
     <color name="yellow_400">#E8CA54</color>
     <color name="yellow">#f8d64e</color>
