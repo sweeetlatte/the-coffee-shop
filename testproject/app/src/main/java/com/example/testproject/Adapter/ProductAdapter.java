@@ -1,6 +1,7 @@
 package com.example.testproject.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,11 +44,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
         holder.tvNameProduct.setText(product.getNameProduct());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.tvPriceProduct.setText("Giá: "+ decimalFormat.format(product.getPriceProduct())+ " VNĐ");
-        Picasso.get().load(product.priceProduct)
+        Picasso.get().load(product.getSrcImgProduct()).into(holder.imgProduct);
+        String src = product.getSrcImgProduct();
+        Log.e("src",src);
 //                     .placeholder(R.drawable.noimage)
 //                     .error(R.drawable.error)
-                     .into(holder.imgProduct);
-
+//                     .into(holder.imgProduct);
     }
 
     @Override
