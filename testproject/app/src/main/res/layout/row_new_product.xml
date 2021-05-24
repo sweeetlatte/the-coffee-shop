@@ -18,7 +18,7 @@
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/imgProduct"
-                    android:layout_width="100dp"
+                    android:layout_width="180dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/giohang"
                     android:layout_height="100dp"/>
@@ -27,6 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:text="ca phe"/>
                 <TextView
                     android:id="@+id/tvPriceProduct"

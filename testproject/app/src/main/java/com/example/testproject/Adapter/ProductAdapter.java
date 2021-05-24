@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.testproject.Interface.OnItemClickListener;
 import com.example.testproject.Model.Product;
 import com.example.testproject.R;
 import com.squareup.picasso.Picasso;
@@ -23,10 +23,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 
     Context context;
     ArrayList <Product> productArrayList;
+    private OnItemClickListener itemClickListener;
+    Product product;
 
-    public ProductAdapter(Context context, ArrayList<Product> productArrayList) {
+    public ProductAdapter(Context context, ArrayList<Product> productArrayList, OnItemClickListener itemClickListener) {
         this.context = context;
         this.productArrayList = productArrayList;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -40,7 +43,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        Product product = productArrayList.get(position);
+        product = productArrayList.get(position);
         holder.tvNameProduct.setText(product.getNameProduct());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.tvPriceProduct.setText("Giá: "+ decimalFormat.format(product.getPriceProduct())+ " VNĐ");
@@ -50,6 +53,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 //                     .placeholder(R.drawable.noimage)
 //                     .error(R.drawable.error)
 //                     .into(holder.imgProduct);
+
     }
 
     @Override
@@ -57,16 +61,30 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
         return productArrayList.size();
     }
 
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+
+
     public class ItemHolder extends RecyclerView.ViewHolder{
         public TextView tvNameProduct;
         public TextView tvPriceProduct;
         public ImageView imgProduct;
+        Product product;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
             tvNameProduct = (TextView) itemView.findViewById(R.id.tvNameProduct);
             tvPriceProduct = (TextView) itemView.findViewById(R.id.tvPriceProduct);
             imgProduct = (ImageView) itemView.findViewById(R.id.imgProduct);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    itemClickListener.onItemClickListener(product);
+                }
+            });
         }
     }
 }

@@ -37,7 +37,8 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/slider"
             android:layout_width="match_parent"
-            android:layout_height="171dp"></androidx.viewpager2.widget.ViewPager2>
+            android:layout_height="171dp">
+        </androidx.viewpager2.widget.ViewPager2>
 
         <ViewFlipper
             android:id="@+id/viewFlipper"
@@ -52,6 +53,7 @@
             android:gravity="center|bottom"
             android:orientation="vertical">
             <TextView
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Products"
