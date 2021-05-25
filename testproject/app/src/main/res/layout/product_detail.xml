@@ -1,16 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Activity.ProductDetailActivity">
-    <TextView
-        android:id="@+id/txt"
+    tools:context=".Activity.ProductDetailActivity"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="helllllllllllo"
-        tools:ignore="MissingConstraints" />
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/prd_name" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView3"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-32dp"
+        android:text="Frappe"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/theme"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginBottom="-35dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:text="A foam-covered iced coffee drink made from instant coffee"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginBottom="-45dp"
+        android:layout_marginLeft="10dp"
+        android:text="Size"
+        android:textSize="18sp"
+        android:textColor="@color/theme"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_marginBottom="-45dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp">
+
+        <RadioButton
+            android:id="@+id/radio_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="L (+5.000đ)" />
+
+        <RadioButton
+            android:id="@+id/radio_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M"
+            android:layout_marginLeft="20dp"/>
+
+        <RadioButton
+            android:id="@+id/radio_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S (-5.000đ)"
+            android:layout_marginLeft="20dp"/>
+
+    </RadioGroup>
+
+
+
+</RelativeLayout>
