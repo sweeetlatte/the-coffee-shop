@@ -13,7 +13,6 @@ public class ProductDetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_detail);
-        txt = (TextView) findViewById(R.id.txt);
 
 
     }
