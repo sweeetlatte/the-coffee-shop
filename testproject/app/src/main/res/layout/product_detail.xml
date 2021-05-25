@@ -72,7 +72,6 @@
             android:id="@+id/radio_a"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:checked="true"
             android:text="L (+5.000đ)" />
 
         <RadioButton
@@ -80,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="M"
+            android:checked="true"
             android:layout_marginLeft="20dp"/>
 
         <RadioButton
@@ -115,7 +115,6 @@
             android:id="@+id/radio_1"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:checked="true"
             android:text="Ice cream (+5.000đ)" />
 
         <RadioButton
@@ -162,7 +161,7 @@
         android:textColor="@color/theme">
     </TextView>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -173,14 +172,9 @@
         app:boxCornerRadiusBottomEnd="15dp"
         app:boxCornerRadiusBottomStart="15dp"
         app:boxCornerRadiusTopEnd="15dp"
-        app:boxCornerRadiusTopStart="15dp">
+        app:boxCornerRadiusTopStart="15dp"
+        android:hint="Type something..."/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:hint="Type something..."
-            android:background="@color/lightCoffee" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -197,15 +191,15 @@
             android:layout_marginTop="18dp"
             android:background="@drawable/ic_addin">
         </Button>
-        <EditText
+        <TextView
             android:id="@+id/editTextNumber"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginLeft="46dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="18dp"
             android:ems="10"
             android:inputType="number"
-            android:hint="1"
+            android:text="1"
             android:textColor="@color/theme"
             android:textColorHint="@color/theme"/>
         <Button
