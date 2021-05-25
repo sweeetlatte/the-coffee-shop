@@ -1,22 +1,20 @@
 package com.example.testproject.Fragment;
 
-        import android.content.Context;
         import android.content.Intent;
         import android.os.Bundle;
 
-        import androidx.annotation.Nullable;
         import androidx.fragment.app.Fragment;
         import androidx.recyclerview.widget.GridLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
-        import androidx.viewpager2.widget.ViewPager2;
 
-        import android.util.Log;
         import android.view.LayoutInflater;
+        import android.view.Menu;
+        import android.view.MenuInflater;
+        import android.view.MenuItem;
         import android.view.View;
         import android.view.ViewGroup;
-        import android.view.animation.Animation;
-        import android.view.animation.AnimationUtils;
         import android.widget.ImageView;
+        import android.widget.TextView;
         import android.widget.Toast;
         import android.widget.ViewFlipper;
 
@@ -26,8 +24,6 @@ package com.example.testproject.Fragment;
         import com.android.volley.VolleyError;
         import com.android.volley.toolbox.JsonArrayRequest;
         import com.android.volley.toolbox.Volley;
-        import com.example.testproject.Activity.LoginActivity;
-        import com.example.testproject.Activity.MainActivity;
         import com.example.testproject.Activity.ProductDetailActivity;
         import com.example.testproject.Adapter.ProductAdapter;
         import com.example.testproject.Interface.OnItemClickListener;
@@ -40,10 +36,7 @@ package com.example.testproject.Fragment;
         import org.json.JSONException;
         import org.json.JSONObject;
 
-        import java.io.NotActiveException;
-        import java.lang.annotation.Annotation;
         import java.util.ArrayList;
-        import java.util.List;
 
 public class HomeFragment extends Fragment implements OnItemClickListener {
     RecyclerView recyclerViewNewProducts;
@@ -57,13 +50,33 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     String srcImg = "";
     String describe = "";
     OnItemClickListener onItemClickListener;
+
+    MenuItem menuItem;
+    TextView badgeCounter;
+    int pendingItems = 0;
+
     public HomeFragment() {
         // Required empty public constructor
     }
 
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        super.onCreateOptionsMenu(menu, inflater);
+
+        menuItem = menu.findItem(R.id.cart);
+
+        if (pendingItems == 0) {
+            menuItem.setActionView(null);
+        } else {
+            menuItem.setActionView(R.layout.noti_cart);
+            View view = menuItem.getActionView();
+            badgeCounter = view.findViewById(R.id.badge);
+            badgeCounter.setText(String.valueOf(pendingItems));
+        }
+
+    }
+
     @Override
-
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
