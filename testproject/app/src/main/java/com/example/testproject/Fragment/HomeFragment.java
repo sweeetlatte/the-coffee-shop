@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
         if (pendingItems == 0) {
             menuItem.setActionView(null);
         } else {
-            menuItem.setActionView(R.layout.noti_cart);
+            menuItem.setActionView(R.layout.fragment_home);
             View view = menuItem.getActionView();
             badgeCounter = view.findViewById(R.id.badge);
             badgeCounter.setText(String.valueOf(pendingItems));

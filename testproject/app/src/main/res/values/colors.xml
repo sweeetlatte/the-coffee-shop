@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="purple_500">#633c18</color>
-    <color name="purple_700">#d1c4ba</color>
+    <color name="purple_700">#8f7359</color>
     <color name="white">#FFFFFFFF</color>
     <color name="teal_700">#d1c4ba</color>
     <color name="dark_coffee">#633c18</color>
@@ -17,5 +17,6 @@
     <color name="success">#6CF446</color>
 
     <color name="lightCoffee">#d1c4ba</color>
+    <color name="middle">#8f7359</color>
     <color name="theme">#633c18</color>
 </resources>
