@@ -1,6 +1,6 @@
 <?php
     include "connect.php";
-    $query = "select * from thucdon order by MaMon DESC LIMIT 6";
+    $query = "select * from thucdon where MALSP = 2";
     $data = mysqli_query($connection, $query);
     $productList = array();
 
