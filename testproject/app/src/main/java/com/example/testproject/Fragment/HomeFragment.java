@@ -1,6 +1,7 @@
 package com.example.testproject.Fragment;
 
         import android.content.Context;
+        import android.content.Intent;
         import android.os.Bundle;
 
         import androidx.annotation.Nullable;
@@ -25,7 +26,11 @@ package com.example.testproject.Fragment;
         import com.android.volley.VolleyError;
         import com.android.volley.toolbox.JsonArrayRequest;
         import com.android.volley.toolbox.Volley;
+        import com.example.testproject.Activity.LoginActivity;
+        import com.example.testproject.Activity.MainActivity;
+        import com.example.testproject.Activity.ProductDetailActivity;
         import com.example.testproject.Adapter.ProductAdapter;
+        import com.example.testproject.Interface.OnItemClickListener;
         import com.example.testproject.Model.Product;
         import com.example.testproject.R;
         import com.example.testproject.Untils.Server;
@@ -35,25 +40,27 @@ package com.example.testproject.Fragment;
         import org.json.JSONException;
         import org.json.JSONObject;
 
+        import java.io.NotActiveException;
         import java.lang.annotation.Annotation;
         import java.util.ArrayList;
         import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnItemClickListener {
     RecyclerView recyclerViewNewProducts;
     ViewFlipper viewFlipper;
     ArrayList<Product> productArrayList;
     ProductAdapter productAdapter;
-    private ViewPager2 viewPager2;
     View view;
     int id = 0;
     String nameProduct = "";
     Integer priceProdut = 0;
     String srcImg = "";
-
+    String describe = "";
+    OnItemClickListener onItemClickListener;
     public HomeFragment() {
         // Required empty public constructor
     }
+
     @Override
 
 
@@ -73,7 +80,7 @@ public class HomeFragment extends Fragment {
 //        productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
 //        productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
 
-        productAdapter = new ProductAdapter(getContext(),productArrayList);
+        productAdapter = new ProductAdapter(getContext(),productArrayList, this);
         recyclerViewNewProducts.setHasFixedSize(true);
         recyclerViewNewProducts.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerViewNewProducts.setAdapter(productAdapter);
@@ -92,7 +99,8 @@ public class HomeFragment extends Fragment {
                                     nameProduct = jsonObject.getString("name");
                                     priceProdut = Integer.parseInt( jsonObject.getString("price"));
                                     srcImg = jsonObject.getString("srcImg");
-                                    productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg));
+                                    describe = jsonObject.getString("describe");
+                                    productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg, describe));
                                     productAdapter.notifyDataSetChanged();
                                     productAdapter.notifyDataSetChanged();
 
@@ -124,14 +132,19 @@ public class HomeFragment extends Fragment {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             viewFlipper.addView(imageView);
         }
-        viewFlipper.setFlipInterval(3000);
+        viewFlipper.setFlipInterval(2000);
         viewFlipper.setAutoStart(true);
 
-        //tạo animation
+//       tạo animation
 //       Annotation annotationSlideIn = (Annotation) AnimationUtils.loadAnimation(getContext(),R.anim.slide_in_right);
 //       Annotation annotationSlideOut = (Annotation) AnimationUtils.loadAnimation(getContext(),R.anim.slide_out_right);
 //       viewFlipper.setInAnimation((Animation) annotationSlideIn);
-//       viewFlipper.setOutAnimation((Animation)  annotationSlideOut);
+//       viewFlipper.setOutAnimation((Animation) annotationSlideOut);
     }
 
+    @Override
+    public void onItemClickListener(Product product){
+        Intent intent = new Intent(getContext(), ProductDetailActivity.class);
+        startActivity(intent);
+    }
 }
