@@ -11,12 +11,16 @@ import com.example.testproject.Fragment.AccountFragment;
 import com.example.testproject.Fragment.HomeFragment;
 import com.example.testproject.Fragment.MenuFragment;
 import com.example.testproject.Fragment.ReservationFragment;
+import com.example.testproject.Model.ItemCart;
 import com.example.testproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    ArrayList<ItemCart> itemCartList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+        if(itemCartList == null ){
+            itemCartList = new ArrayList<>();
+
+        }
 
     }
 

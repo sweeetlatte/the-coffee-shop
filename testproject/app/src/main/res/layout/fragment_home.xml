@@ -20,14 +20,14 @@
             android:layout_marginTop="15dp"
             android:src="@drawable/logo"/>
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:height="30dp"
             android:background="@drawable/search_bg"
             android:drawableLeft="@drawable/ic_search"
-            android:text="Search"
+            android:hint="Search"
             android:textSize="20sp"
             android:paddingLeft="5dp"
             android:paddingTop="3dp"/>
