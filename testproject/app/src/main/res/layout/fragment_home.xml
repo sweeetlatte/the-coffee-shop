@@ -13,17 +13,41 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="327dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/cart_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cart">
+            </ImageView>
+
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:id="@+id/badge"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_toRightOf="@+id/cart_icon"
+                android:layout_alignTop="@+id/cart_icon"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginTop="-10dp"
+                app:nbMaxTextLength="2">
+            </com.nex3z.notificationbadge.NotificationBadge>
+
+        </LinearLayout>
+
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/logo" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_marginTop="10dp"
             android:height="30dp"
             android:background="@drawable/search_bg"
             android:drawableLeft="@drawable/ic_search"
@@ -39,7 +63,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="187dp"
         app:cardCornerRadius="20dp">
 
         <ViewFlipper
@@ -53,7 +77,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="405dp"
+        android:layout_marginTop="418dp"
         android:gravity="center|bottom"
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
