@@ -1,6 +1,8 @@
 package com.example.testproject.Fragment;
 
-import android.content.Context;
+
+
+
         import android.os.Bundle;
 
         import androidx.annotation.DrawableRes;
@@ -25,7 +27,11 @@ import android.content.Context;
         import com.android.volley.VolleyError;
         import com.android.volley.toolbox.JsonArrayRequest;
         import com.android.volley.toolbox.Volley;
+        import com.example.testproject.Activity.LoginActivity;
+        import com.example.testproject.Activity.MainActivity;
+        import com.example.testproject.Activity.ProductDetailActivity;
         import com.example.testproject.Adapter.ProductAdapter;
+        import com.example.testproject.Interface.OnItemClickListener;
         import com.example.testproject.Model.Product;
         import com.example.testproject.R;
         import com.example.testproject.Untils.Server;
@@ -35,29 +41,26 @@ import android.content.Context;
         import org.json.JSONException;
         import org.json.JSONObject;
 
+        import java.io.NotActiveException;
         import java.lang.annotation.Annotation;
         import java.util.ArrayList;
         import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnItemClickListener {
     RecyclerView recyclerViewNewProducts;
     ViewFlipper viewFlipper;
     ArrayList<Product> productArrayList;
     ProductAdapter productAdapter;
-    private ViewPager2 viewPager2;
     View view;
     int id = 0;
     String nameProduct = "";
     Integer priceProdut = 0;
     String srcImg = "";
-
+    String describe = "";
+    OnItemClickListener onItemClickListener;
     public HomeFragment() {
         // Required empty public constructor
     }
-
-
-
-/////////////////////////////////    New Products
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,10 +76,7 @@ public class HomeFragment extends Fragment {
         recyclerViewNewProducts = (RecyclerView) view.findViewById(R.id.recyclerViewNewProducts);
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper);
         productArrayList = new ArrayList<>();
-        productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-        productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-
-        productAdapter = new ProductAdapter(getContext(),productArrayList);
+        productAdapter = new ProductAdapter(getContext(),productArrayList, this);
         recyclerViewNewProducts.setHasFixedSize(true);
         recyclerViewNewProducts.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerViewNewProducts.setAdapter(productAdapter);
@@ -85,25 +85,29 @@ public class HomeFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest =  new JsonArrayRequest(Request.Method.GET, Server.pathGetNewProduct, null,
                 new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                if(response != null){
-                    for(int i = 0; i< response.length(); i ++){
-                        try {
-                            JSONObject jsonObject = response.getJSONObject(i);
-                            id = jsonObject.getInt("id");
-                            nameProduct = jsonObject.getString("name");
-                            priceProdut = jsonObject.getInt(" price");
-                            srcImg = jsonObject.getString("srcImg");
-                            productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg));
 
-                            productAdapter.notifyDataSetChanged();
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        if (response != null) {
+                            for (int i = 0; i < response.length(); i++) {
+                                try {
+                                    JSONObject jsonObject = response.getJSONObject(i);
+                                    id = jsonObject.getInt("id");
+                                    nameProduct = jsonObject.getString("name");
+                                    priceProdut = Integer.parseInt( jsonObject.getString("price"));
+                                    srcImg = jsonObject.getString("srcImg");
+                                    describe = jsonObject.getString("describe");
+                                    productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg, describe));
+                                    productAdapter.notifyDataSetChanged();
+                                    productAdapter.notifyDataSetChanged();
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
                         }
                     }
-                }
+               }
             }
         }, new Response.ErrorListener() {
             @Override
@@ -125,14 +129,19 @@ public class HomeFragment extends Fragment {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             viewFlipper.addView(imageView);
         }
-        viewFlipper.setFlipInterval(3000);
+        viewFlipper.setFlipInterval(2000);
         viewFlipper.setAutoStart(true);
 
-        //tạo animation
+//       tạo animation
 //       Annotation annotationSlideIn = (Annotation) AnimationUtils.loadAnimation(getContext(),R.anim.slide_in_right);
 //       Annotation annotationSlideOut = (Annotation) AnimationUtils.loadAnimation(getContext(),R.anim.slide_out_right);
 //       viewFlipper.setInAnimation((Animation) annotationSlideIn);
-//       viewFlipper.setOutAnimation((Animation)  annotationSlideOut);
+//       viewFlipper.setOutAnimation((Animation) annotationSlideOut);
     }
 
+    @Override
+    public void onItemClickListener(Product product){
+        Intent intent = new Intent(getContext(), ProductDetailActivity.class);
+        startActivity(intent);
+    }
 }
