@@ -9,8 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
-import android.widget.ViewFlipper;
+
 
 import com.example.testproject.Adapter.Menu_ViewPageAdapter;
 import com.example.testproject.R;

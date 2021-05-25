@@ -8,7 +8,8 @@
         array_push($productList, new Product(
             $row['MaMon'],
             $row['TenMon'],
-            $row['Gia']);
+            $row['Gia'])
+        );
     } 
     echo json_encode($productList);     
     class Product{
