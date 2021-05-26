@@ -3,10 +3,14 @@ package com.example.testproject.Fragment;
         import android.content.Intent;
         import android.os.Bundle;
 
+        import androidx.annotation.NonNull;
+        import androidx.annotation.Nullable;
         import androidx.fragment.app.Fragment;
         import androidx.recyclerview.widget.GridLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
 
+        import android.os.Parcelable;
+        import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.Menu;
         import android.view.MenuInflater;
@@ -24,6 +28,7 @@ package com.example.testproject.Fragment;
         import com.android.volley.VolleyError;
         import com.android.volley.toolbox.JsonArrayRequest;
         import com.android.volley.toolbox.Volley;
+        import com.example.testproject.Activity.CartActivity;
         import com.example.testproject.Activity.ProductDetailActivity;
         import com.example.testproject.Adapter.ProductAdapter;
         import com.example.testproject.Interface.OnItemClickListener;
@@ -53,50 +58,57 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
 
     MenuItem menuItem;
     TextView badgeCounter;
+    ImageView cart_icon;
     int pendingItems = 0;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
-        super.onCreateOptionsMenu(menu, inflater);
-
-        menuItem = menu.findItem(R.id.cart);
-
-        if (pendingItems == 0) {
-            menuItem.setActionView(null);
-        } else {
-            menuItem.setActionView(R.layout.fragment_home);
-            View view = menuItem.getActionView();
-            badgeCounter = view.findViewById(R.id.badge);
-            badgeCounter.setText(String.valueOf(pendingItems));
-        }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
+
         view = inflater.inflate(R.layout.fragment_home, container, false);
         InitUI(view);
         AcctionViewFlipper(view);
         GetDataNewProduct();
+        cart_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                A();
+            }
+        });
         return view;
     }
+
+    private void A() {
+         Intent intent = new Intent(getContext(),CartActivity.class);
+         startActivity(intent);
+    }
+
     private void InitUI(View view){
         recyclerViewNewProducts = (RecyclerView) view.findViewById(R.id.recyclerViewNewProducts);
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper);
+        cart_icon = (ImageView) view.findViewById(R.id.cart_icon);
         productArrayList = new ArrayList<>();
-//        productArrayList.add(new Product(1,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-//        productArrayList.add(new Product(2,"nameProduct",2000,"https://img.thuthuatphanmem.vn/uploads/2018/10/04/anh-dep-ben-ly-cafe-den_110730392.jpg"));
-
         productAdapter = new ProductAdapter(getContext(),productArrayList, this);
         recyclerViewNewProducts.setHasFixedSize(true);
         recyclerViewNewProducts.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerViewNewProducts.setAdapter(productAdapter);
+
+
     }
     public void GetDataNewProduct() {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
@@ -157,7 +169,9 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
 
     @Override
     public void onItemClickListener(Product product){
+        Log.e("product trong home", product+"");
         Intent intent = new Intent(getContext(), ProductDetailActivity.class);
+        intent.putExtra("Product",product);
         startActivity(intent);
     }
 }

@@ -6,16 +6,17 @@ public class ItemCart {
     public String nameProduct;
     public Integer priceProduct;
     public String srcImgProduct;
- //   public String describe;
     public String topping;
+    public int quantity;
     public int total;
 
-    public ItemCart(int idProduct, String nameProduct, Integer priceProduct, String srcImgProduct, String topping, int total) {
+    public ItemCart(int idProduct, String nameProduct, Integer priceProduct, String srcImgProduct, String topping, int quantity, int total) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
         this.priceProduct = priceProduct;
         this.srcImgProduct = srcImgProduct;
         this.topping = topping;
+        this.quantity = quantity;
         this.total = total;
     }
 
@@ -57,6 +58,14 @@ public class ItemCart {
 
     public void setTopping(String topping) {
         this.topping = topping;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getTotal() {

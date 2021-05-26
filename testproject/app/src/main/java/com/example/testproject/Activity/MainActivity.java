@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    ArrayList<ItemCart> itemCartList;
+    public static ArrayList<ItemCart> itemCartList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

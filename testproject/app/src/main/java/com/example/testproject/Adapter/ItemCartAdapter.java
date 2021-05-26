@@ -43,7 +43,6 @@ public class ItemCartAdapter extends BaseAdapter {
         TextView tvNameProduct;
         TextView tvPriceProduct;
         TextView  tvTopping;
-        //        TextView tvQuantum;
         TextView tvTotal;
 
     }
