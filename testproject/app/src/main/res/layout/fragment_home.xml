@@ -62,7 +62,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="187dp"
+        android:layout_marginTop="155dp"
         app:cardCornerRadius="20dp">
 
         <ViewFlipper
@@ -76,7 +76,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="418dp"
+        android:layout_marginTop="401dp"
         android:gravity="center|bottom"
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
