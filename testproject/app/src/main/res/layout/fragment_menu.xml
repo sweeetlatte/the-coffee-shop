@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         app:tabTextColor="@color/theme"
         app:tabBackground="@color/white"
-        app:tabIndicator="@color/theme"
+        app:tabIndicatorColor="@color/theme"
         app:tabMode="scrollable"
         android:layout_marginTop="15dp" />
 
