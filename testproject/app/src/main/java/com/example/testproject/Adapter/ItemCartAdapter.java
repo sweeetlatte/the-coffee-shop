@@ -53,7 +53,7 @@ public class ItemCartAdapter extends BaseAdapter {
         if(viewHolder == null){
             viewHolder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView =inflater.inflate(R.layout.row_itemcart,null);
+            convertView =inflater.inflate(R.layout.row_item_cart,null);
             viewHolder.imageView = convertView.findViewById(R.id.anhMon);
             viewHolder.tvNameProduct = convertView.findViewById(R.id.tenMon);
             viewHolder.tvPriceProduct = convertView.findViewById(R.id.giaBan);
