@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingRight="20dp"
-    android:paddingLeft="20dp">
+    android:paddingLeft="20dp"
+    tools:context=".Activity.CheckoutActivity">
 
     <TextView
         android:id="@+id/text1"
@@ -46,81 +48,11 @@
         android:textSize="16sp"
         android:textColor="@color/grey">
     </TextView>
-
-    <androidx.cardview.widget.CardView
+    <ListView
+        android:layout_marginBottom="-200dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text3"
-        android:layout_marginBottom="-62dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:outlineAmbientShadowColor="@color/grey">
-
-        <ImageView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:src="@drawable/prd_name">
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="4dp"
-            android:text="Frappe"
-            android:textColor="@color/theme"
-            android:textSize="19sp">
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="30dp"
-            android:text="M"
-            android:textColor="@color/grey"
-            android:textSize="14sp">
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="93dp"
-            android:layout_marginTop="30dp"
-            android:text=";"
-            android:textColor="@color/grey"
-            android:textSize="14sp">
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="99dp"
-            android:layout_marginTop="30dp"
-            android:text="Ice cream"
-            android:textColor="@color/grey"
-            android:textSize="14sp">
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="225dp"
-            android:layout_marginTop="15dp"
-            android:text="1"
-            android:textColor="@color/black"
-            android:textSize="18sp">
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="295dp"
-            android:layout_marginTop="15dp"
-            android:text="50.000đ"
-            android:textColor="@color/black"
-            android:textSize="18sp">
-        </TextView>
-
-    </androidx.cardview.widget.CardView>
+        android:layout_height="100dp"
+        android:id="@+id/lv_checkout"/>
 
     <TextView
         android:id="@+id/text4"
@@ -133,6 +65,7 @@
         android:textSize="18sp">
     </TextView>
     <TextView
+        android:id="@+id/tv_checkout_sum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/text3"
@@ -153,6 +86,7 @@
         android:textSize="18sp">
     </TextView>
     <TextView
+        android:id="@+id/tv_checkout_ship"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/text4"
@@ -174,6 +108,7 @@
         android:textSize="18sp">
     </TextView>
     <TextView
+        android:id="@+id/tv_checkout_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/text5"
@@ -189,7 +124,7 @@
         android:layout_height="wrap_content"
         android:text="Order"
         android:layout_alignBottom="@+id/text1"
-        android:layout_marginBottom="-650dp">
+        android:layout_marginBottom="-540dp">
     </Button>
 
 </RelativeLayout>

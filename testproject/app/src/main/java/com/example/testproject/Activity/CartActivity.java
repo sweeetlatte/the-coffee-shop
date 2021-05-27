@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -51,6 +52,7 @@ public class CartActivity extends Activity {
     private void InitUI() {
         listView = (ListView) findViewById(R.id.listViewCart);
         tvTotal = (TextView) findViewById(R.id.tvTotal);
+        btnCheckOut = (Button) findViewById(R.id.btnCheckOut);
         itemCartAdapter = new ItemCartAdapter(getApplicationContext(),R.layout.row_item_cart, MainActivity.itemCartList );
         listView.setAdapter(itemCartAdapter);
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -75,6 +77,17 @@ public class CartActivity extends Activity {
                 });
                 builder.show();
                 return true;
+            }
+        });
+
+        btnCheckOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(MainActivity.itemCartList.size() > 0){
+                    Intent intent = new Intent(getApplicationContext(), CheckoutActivity.class);
+                    startActivity(intent);
+
+                } else Toast.makeText(getApplicationContext(), "empty cart", Toast.LENGTH_SHORT).show();
             }
         });
     }

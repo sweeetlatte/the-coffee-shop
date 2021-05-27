@@ -1,7 +1,7 @@
 package com.example.testproject.Untils;
 
 public class Server {
-    public static String localhost = "192.168.0.5";
+    public static String localhost = "192.168.0.103";
     public static String pathLogin = "http://" + localhost + "/TheCoffeeShop/getUser.php";
     public static String pathGetNewProduct = "http://" + localhost + "/TheCoffeeShop/getNewProduct.php";
     public static String pathGetCoffeProduct = "http://" + localhost + "/TheCoffeeShop/getCoffeeProduct.php";
