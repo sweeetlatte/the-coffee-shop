@@ -13,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Testproject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.LoginActivity"
+        <activity
+            android:name=".Activity.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.Testproject.NoActionBar"></activity>
+        <activity
+            android:name=".Activity.LoginActivity"
             tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"></activity>
-        <activity android:name=".Activity.CartActivity"></activity>
-        <activity android:name=".Activity.ProductDetailActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.CartActivity" />
+        <activity android:name=".Activity.ProductDetailActivity" />
     </application>
 
 </manifest>
