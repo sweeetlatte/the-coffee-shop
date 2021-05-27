@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
                                     describe = jsonObject.getString("describe");
                                     productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg, describe));
                                     productAdapter.notifyDataSetChanged();
-                                    productAdapter.notifyDataSetChanged();
+
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
