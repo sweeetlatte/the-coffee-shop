@@ -22,7 +22,7 @@ public class CheckoutActivity extends Activity {
     TextView tvCheckOutShip;
     ListView lvCheckOut;
     ItemCartAdapter adapter;
-    public long total = 0;
+    int total = 0;
 
 
     @Override
@@ -35,10 +35,11 @@ public class CheckoutActivity extends Activity {
     }
 
     private void SumTotal() {
-        int ship = Integer.parseInt(tvCheckOutShip.getText().toString().trim()) ;
-        long sum = total + ship;
+   //     int ship = Integer.parseInt(tvCheckOutShip.getText().toString().trim()) ;
+    //    int sum = total + ship;
+
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        tvCheckOutTotal.setText(decimalFormat.format(total) + " VNĐ");
+        tvCheckOutTotal.setText(decimalFormat.format(total+ 10000) + " VNĐ");
     }
 
     private void InitUI() {
