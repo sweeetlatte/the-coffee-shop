@@ -24,7 +24,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
     Context context;
     ArrayList <Product> productArrayList;
     private OnItemClickListener itemClickListener;
-    Product product;
+
 
     public ProductAdapter(Context context, ArrayList<Product> productArrayList, OnItemClickListener itemClickListener) {
         this.context = context;
@@ -43,13 +43,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        product = productArrayList.get(position);
-        holder.tvNameProduct.setText(product.getNameProduct());
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.tvPriceProduct.setText("Giá: "+ decimalFormat.format(product.getPriceProduct())+ " VNĐ");
-        Picasso.get().load(product.getSrcImgProduct()).into(holder.imgProduct);
-        String src = product.getSrcImgProduct();
-        Log.e("src",src);
+//        this.product = productArrayList.get(position);
+        holder.bindData(productArrayList.get(position));
 //                     .placeholder(R.drawable.noimage)
 //                     .error(R.drawable.error)
 //                     .into(holder.imgProduct);
@@ -72,6 +67,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
         public TextView tvNameProduct;
         public TextView tvPriceProduct;
         public ImageView imgProduct;
+        private Product product;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,9 +77,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     itemClickListener.onItemClickListener(product);
                 }
             });
+
+        }
+        private void bindData(Product product){
+            this.product = product;
+            tvNameProduct.setText(product.getNameProduct());
+            DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+            tvPriceProduct.setText("Giá: "+ decimalFormat.format(product.getPriceProduct())+ " VNĐ");
+            Picasso.get().load(product.getSrcImgProduct()).into(imgProduct);
+            String src = product.getSrcImgProduct();
+            Log.e("src",src);
         }
     }
 }

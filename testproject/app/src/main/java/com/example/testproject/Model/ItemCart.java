@@ -1,6 +1,8 @@
 package com.example.testproject.Model;
 
-public class ItemCart {
+import java.io.Serializable;
+
+public class ItemCart implements Serializable {
 
     public int idProduct;
     public String nameProduct;

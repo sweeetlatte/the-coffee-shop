@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
         if(itemCartList == null ){
             itemCartList = new ArrayList<>();
-
         }
 
     }

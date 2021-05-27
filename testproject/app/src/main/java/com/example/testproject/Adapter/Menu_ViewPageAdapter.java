@@ -49,15 +49,6 @@ public class Menu_ViewPageAdapter extends FragmentStatePagerAdapter {
         return 3;
     }
 
-    /**
-     * This method may be called by the ViewPager to obtain a title string
-     * to describe the specified page. This method may return null
-     * indicating no title for this page. The default implementation returns
-     * null.
-     *
-     * @param position The position of the title requested
-     * @return A title for the requested page
-     */
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {

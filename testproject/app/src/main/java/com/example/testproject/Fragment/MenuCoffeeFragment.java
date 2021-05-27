@@ -2,6 +2,7 @@ package com.example.testproject.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -100,8 +101,10 @@ public class MenuCoffeeFragment extends Fragment implements OnItemClickListener 
     }
 
     @Override
-    public void onItemClickListener(Product product) {
+    public void onItemClickListener(Product product){
+        Log.e("product trong home", product+"");
         Intent intent = new Intent(getContext(), ProductDetailActivity.class);
+        intent.putExtra("Product",product);
         startActivity(intent);
     }
 }

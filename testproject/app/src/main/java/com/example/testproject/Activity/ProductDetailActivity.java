@@ -50,14 +50,13 @@ public class ProductDetailActivity extends AppCompatActivity {
     public int price ;
     public int tSize = 0;
     public int tTopping = 0;
-    int t;
+    public int total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_detail);
         InitUI();
         GetDataDetailProduct();
-        Topping();
 
     }
 
@@ -97,8 +96,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         }
     }
     private void ChangeButon(){
-        t = quantity*(price  + tTopping + tSize) ;
-        btn_add_product.setText( "ADD " + decimalFormat.format(t)+ " VNĐ");
+        total = quantity*(price  + tTopping + tSize) ;
+        btn_add_product.setText( "ADD " + decimalFormat.format(total)+ " VNĐ");
     }
 
     private void Size() {
@@ -133,6 +132,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         describeProductDetail.setText(product.getDescribe());
         Picasso.get().load(product.getSrcImgProduct()).into(imageProductDetail);
         btn_add_product.setText( "ADD " + decimalFormat.format(product.getPriceProduct())+ " VNĐ");
+        total = price;
     }
 
     @SuppressLint("WrongViewCast")
@@ -165,9 +165,24 @@ public class ProductDetailActivity extends AppCompatActivity {
         btn_add_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean exists = false;
                 strNote = edtNote.getText().toString().trim();
-                orderSize = "Size: " + strSize + ", " + strTopping + ", note: " + strNote;
-                MainActivity.itemCartList.add(new ItemCart(id, name, price, src, orderSize, quantity,t));
+                orderSize = "Size: " + strSize +" "+ strTopping + strNote;
+                if(MainActivity.itemCartList.size() > 0 ){
+                    for (int i = 0; i < MainActivity.itemCartList.size(); i ++){
+                        if(MainActivity.itemCartList.get(i).getIdProduct() == id && MainActivity.itemCartList.get(i).getTopping().equals(orderSize) ){
+                            MainActivity.itemCartList.get(i).setQuantity(MainActivity.itemCartList.get(i).getQuantity() + quantity);
+                            MainActivity.itemCartList.get(i).setTotal(MainActivity.itemCartList.get(i).getTotal() + total);
+                            exists = true;
+                        }
+                    }
+                    if(exists == false){
+                        MainActivity.itemCartList.add(new ItemCart(id, name, price, src, orderSize, quantity,total));
+                    }
+                }
+                else MainActivity.itemCartList.add(new ItemCart(id, name, price, src, orderSize, quantity,total));
+                Intent intent = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(intent);
             }
         });
         btn_add_in.setOnClickListener(new View.OnClickListener() {
@@ -182,15 +197,13 @@ public class ProductDetailActivity extends AppCompatActivity {
         btn_add_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(quantity >= 2){
-                    quantity = quantity - 1;
-                    edtQuatity.setText(quantity +"");
-
-                    ChangeButon();
-
-                } else {
+                quantity = quantity - 1;
+                edtQuatity.setText(quantity +"");
+                ChangeButon();
+                if(quantity <= 1 ){
                     btn_add_out.setVisibility(View.GONE);
                 }
+
             }
         });
 

@@ -33,8 +33,7 @@ public class LoginPresenter {
 
     public void Login(User user){
         if(user.IsValidNumberPhone() && user.IsValidPassWord()){
-           // mLoginInterface.LoginAccount(user.getNumberPhone(),user.getPassWord());
-            mLoginInterface.LogInSuccess();
+            mLoginInterface.LoginAccount(user.getNumberPhone(),user.getPassWord());
         } else {
             mLoginInterface.LogInError();
         }
