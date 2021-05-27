@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp">
+
+    <ImageView
+        android:id="@+id/logo_signup"
+        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:id="@+id/register_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/logo_signup"
+        android:layout_marginBottom="-65dp"
+        android:text="Register"
+        android:textColor="@color/theme"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:gravity="center_horizontal">
+    </TextView>
+
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/register_layout"
+        android:layout_marginBottom="-85dp"
+        android:background="@drawable/duongvien_goctron"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="First name"
+        android:inputType="text"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/lightCoffee"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/register_layout"
+        android:layout_marginBottom="-85dp"
+        android:layout_marginLeft="188dp"
+        android:background="@drawable/duongvien_goctron"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Last name"
+        android:inputType="text"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/lightCoffee"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_alignBottom="@+id/last_name"
+        android:layout_marginBottom="-60dp"
+        android:background="@drawable/duongvien_goctron"
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Phone number"
+        android:inputType="number"
+        android:maxLines="10"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/lightCoffee"
+        android:textSize="16sp" />
+    <EditText
+        android:layout_marginBottom="-60dp"
+        android:layout_alignBottom="@+id/phone_number"
+        android:background="@drawable/duongvien_goctron"
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:maxLines="10"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/lightCoffee"
+        android:textSize="16sp"
+        app:passwordToggleEnabled="true"/>
+    <EditText
+        android:layout_marginBottom="-60dp"
+        android:layout_alignBottom="@+id/password"
+        android:background="@drawable/duongvien_goctron"
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Confirm password"
+        android:inputType="textPassword"
+        android:maxLines="10"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/lightCoffee"
+        android:textSize="16sp"
+        app:passwordToggleEnabled="true"/>
+
+    <Button
+        android:id="@+id/signupBtn"
+        android:layout_alignBottom="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-100dp"
+        android:background="@drawable/loginbutton_selector"
+        android:padding="3dp"
+        android:text="sign up"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/signupBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-50dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="Have an account? Sign in"
+        android:textColor="@color/theme"
+        android:textSize="15sp"/>
+
+</RelativeLayout>
