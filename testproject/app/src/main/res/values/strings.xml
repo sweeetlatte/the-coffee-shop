@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">testproject</string>
+    <string name="app_name">The Cappuccino Shop</string>
     <string name="newUser">Not a Member yet? Sign Up here.</string>
     <string name="forgot">Forgot your password?</string>
     <!-- TODO: Remove or change this placeholder text -->
