@@ -122,5 +122,4 @@
         android:textSize="15sp"
         tools:ignore="MissingClass" />
 
-
 </RelativeLayout>
