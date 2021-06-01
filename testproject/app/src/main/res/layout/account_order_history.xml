@@ -16,4 +16,96 @@
         android:textColor="@color/theme">
     </TextView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/menu_layout_name"
+        android:layout_marginBottom="-90dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Affogato"
+            android:textSize="19sp"
+            android:textColor="@color/theme">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="19:04"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="40dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01/06/2021"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="47dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="50,000 VNĐ"
+            android:textSize="19sp"
+            android:layout_gravity="right"
+            android:textColor="@color/theme">
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cv_1"
+        android:layout_marginBottom="-50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Affogato"
+            android:textSize="19sp"
+            android:textColor="@color/theme">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="19:04"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="40dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01/06/2021"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="47dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="50,000 VNĐ"
+            android:textSize="19sp"
+            android:layout_gravity="right"
+            android:textColor="@color/theme">
+        </TextView>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>
