@@ -4,14 +4,155 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.AccountFragment">
+    tools:context=".Fragment.AccountFragment"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sweet Latte"
+        android:textColor="@color/theme"
+        android:textSize="27sp"
+        android:gravity="left"
+        android:layout_marginTop="50dp">
+    </TextView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="acc"
-        android:layout_centerInParent="true"
-        android:textSize="50dp">
+        android:layout_alignBottom="@+id/profile_name"
+        android:layout_marginBottom="-60dp"
+        android:gravity="right"
+        android:text="Edit"
+        android:textColor="@color/middle"
+        android:layout_marginRight="6dp"
+        android:textSize="15sp">
     </TextView>
+
+    <TextView
+        android:id="@+id/textview_profile_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile Detail"
+        android:textSize="18sp"
+        android:textColor="@color/theme"
+        android:layout_alignBottom="@+id/profile_name"
+        android:layout_marginBottom="-60dp"
+        android:layout_marginLeft="4dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/first_name"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textview_profile_detail"
+        android:layout_marginBottom="-46dp"
+        android:background="@drawable/duongvien_goctron"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:text="Sweet"
+        android:textColor="@color/black"
+        android:textSize="16sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/last_name"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textview_profile_detail"
+        android:layout_marginBottom="-46dp"
+        android:layout_marginLeft="188dp"
+        android:background="@drawable/duongvien_goctron"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:text="Latte"
+        android:textSize="16sp" >
+    </TextView>
+
+    <TextView
+        android:layout_alignBottom="@+id/last_name"
+        android:layout_marginBottom="-60dp"
+        android:background="@drawable/duongvien_goctron"
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:maxLines="10"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="0932636363">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textview_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="18sp"
+        android:textColor="@color/theme"
+        android:layout_alignBottom="@+id/phone_number"
+        android:layout_marginBottom="-50dp"
+        android:layout_marginLeft="4dp">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/phone_number"
+        android:layout_marginBottom="-48dp"
+        android:gravity="right"
+        android:text="Change"
+        android:textColor="@color/middle"
+        android:layout_marginRight="6dp"
+        android:textSize="15sp">
+    </TextView>
+
+    <TextView
+        android:layout_marginBottom="-46dp"
+        android:layout_alignBottom="@+id/textview_password"
+        android:background="@drawable/duongvien_goctron"
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:maxLines="10"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="abcdefgh"
+        android:inputType="textPassword">
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/order_history_tag"
+        android:layout_alignBottom="@+id/profile_name"
+        android:layout_marginBottom="-350dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order History"
+            android:textSize="20sp"
+            android:textColor="@color/theme"
+            android:background="@drawable/duongvien_goctron"
+            android:drawableEnd="@drawable/ic_arrow"
+            android:drawableRight="@drawable/ic_arrow">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

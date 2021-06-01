@@ -77,7 +77,7 @@ public class MenuSmoothieFragment extends Fragment implements OnItemClickListene
                                     nameProduct = jsonObject.getString("name");
                                     priceProdut = Integer.parseInt( jsonObject.getString("price"));
                                     srcImg = jsonObject.getString("srcImg");
-                                    describe = jsonObject.getString("describe");
+//                                    describe = jsonObject.getString("describe");
                                     productArrayList.add(new Product(id,nameProduct,priceProdut,srcImg, describe));
                                     productAdapter.notifyDataSetChanged();
                                     productAdapter.notifyDataSetChanged();

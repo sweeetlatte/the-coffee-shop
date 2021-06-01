@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup);
+        setContentView(R.layout.fragment_signup);
 
         //Assign Variable
         etFirstName = findViewById(R.id.first_name);

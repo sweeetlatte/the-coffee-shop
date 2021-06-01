@@ -1,7 +1,6 @@
 package com.example.testproject.Activity;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.testproject.Adapter.ItemCartAdapter;
-import com.example.testproject.Model.ItemCart;
 import com.example.testproject.R;
 
 import java.text.DecimalFormat;
@@ -28,7 +26,7 @@ public class CheckoutActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.checkout_fragment);
+        setContentView(R.layout.fragment_checkout);
         InitUI();
         EvenUntil();
         SumTotal();
