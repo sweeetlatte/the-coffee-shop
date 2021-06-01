@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/text2"
         android:layout_marginBottom="-49dp"
-        android:hint="Type something..."/>
+        android:hint="Type Your Address Here"/>
 
     <TextView
         android:id="@+id/text3"
@@ -52,7 +52,7 @@
     <ListView
         android:id="@+id/lv_checkout"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/text3"
         android:layout_marginTop="30dp" />
 
@@ -60,8 +60,8 @@
         android:id="@+id/text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text3"
-        android:layout_marginBottom="-115dp"
+        android:layout_alignBottom="@+id/lv_checkout"
+        android:layout_marginBottom="-60dp"
         android:text="Sum"
         android:textColor="@color/black"
         android:textSize="18sp">
@@ -70,8 +70,8 @@
         android:id="@+id/tv_checkout_sum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text3"
-        android:layout_marginBottom="-115dp"
+        android:layout_alignBottom="@+id/lv_checkout"
+        android:layout_marginBottom="-60dp"
         android:gravity="right"
         android:text="50.000đ"
         android:textColor="@color/black"
@@ -124,9 +124,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-540dp">
+        android:text="check out"
+        android:layout_alignBottom="@+id/tv_checkout_total"
+        android:layout_marginBottom="-90dp">
     </Button>
 
 </RelativeLayout>

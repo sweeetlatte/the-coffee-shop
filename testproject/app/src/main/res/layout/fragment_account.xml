@@ -135,16 +135,11 @@
         android:inputType="textPassword">
     </TextView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/order_history_tag"
-        android:layout_alignBottom="@+id/profile_name"
-        android:layout_marginBottom="-350dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profile_name"
+            android:layout_marginBottom="-350dp"
             android:text="Order History"
             android:textSize="20sp"
             android:textColor="@color/theme"
@@ -152,7 +147,5 @@
             android:drawableEnd="@drawable/ic_arrow"
             android:drawableRight="@drawable/ic_arrow">
         </TextView>
-
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

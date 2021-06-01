@@ -22,15 +22,16 @@
 
                 <ImageView
                     android:id="@+id/imgProduct"
-                    android:layout_width="150dp"
+                    android:layout_width="90dp"
                     android:layout_margin="5dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/giohang"
-                    android:layout_height="150dp"/>
+                    android:layout_height="90dp"/>
                 <TextView
                     android:id="@+id/tvNameProduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:text="ca phe"/>
