@@ -1,7 +1,6 @@
 <?php
-require("connectionsettings.php");
-$connection = mysqli_connect($host, $username, $password, $database);
+$connection = mysqli_connect('localhost', 'root', '', 'TheCoffeeShop');
 if (!$connection) {
-    die('Connect Error: ' . mysqli_connect_error());
+    die('Connect Error: ' . mysqli_error());
 }
 ?>

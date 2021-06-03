@@ -44,7 +44,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/first_name"
+        android:id="@+id/pro_first_name"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textview_profile_detail"
@@ -60,7 +60,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/last_name"
+        android:id="@+id/pro_last_name"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textview_profile_detail"
@@ -77,7 +77,7 @@
     </TextView>
 
     <TextView
-        android:layout_alignBottom="@+id/last_name"
+        android:layout_alignBottom="@+id/pro_last_name"
         android:layout_marginBottom="-60dp"
         android:background="@drawable/duongvien_goctron"
         android:id="@+id/phone_number"
@@ -135,16 +135,11 @@
         android:inputType="textPassword">
     </TextView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/order_history_tag"
-        android:layout_alignBottom="@+id/profile_name"
-        android:layout_marginBottom="-350dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profile_name"
+            android:layout_marginBottom="-350dp"
             android:text="Order History"
             android:textSize="20sp"
             android:textColor="@color/theme"
@@ -152,7 +147,5 @@
             android:drawableEnd="@drawable/ic_arrow"
             android:drawableRight="@drawable/ic_arrow">
         </TextView>
-
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
