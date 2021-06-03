@@ -108,7 +108,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/createAccount"
+        android:id="@+id/tv_sign_up"
         android:layout_alignBottom="@+id/loginBtn"
         android:layout_marginBottom="-40dp"
         android:layout_width="wrap_content"

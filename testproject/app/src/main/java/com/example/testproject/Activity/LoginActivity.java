@@ -34,13 +34,16 @@ import java.util.ArrayList;
 public class LoginActivity extends Activity implements LoginInterface {
     EditText edtLoginMobile;
     EditText edtPasssWord;
+
     TextView tvMessage;
+    TextView tv_sign_up;
     Button btnLogIn;
     View view;
     String numberPhone = "";
     String passWord = "";
     String userName = "";
     String pass = "";
+    int id = 0;
     ArrayList<User> userArrayList;
 
     private LoginPresenter mLoginPresenter;
@@ -57,6 +60,7 @@ public class LoginActivity extends Activity implements LoginInterface {
         edtLoginMobile = (EditText) findViewById(R.id.login_mobile);
         edtPasssWord = (EditText) findViewById(R.id.login_password);
         tvMessage = (TextView) findViewById(R.id.tvMessage);
+        tv_sign_up = (TextView) findViewById(R.id.tv_sign_up);
         btnLogIn = (Button) findViewById(R.id.loginBtn);
         mLoginPresenter = new LoginPresenter(this);
         userArrayList = new ArrayList<>();
@@ -67,6 +71,17 @@ public class LoginActivity extends Activity implements LoginInterface {
                 ClickLogIn();
             }
         });
+        tv_sign_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClickSignUp();
+            }
+        });
+    }
+
+    private void ClickSignUp() {
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     private void ClickLogIn() {
@@ -96,6 +111,7 @@ public class LoginActivity extends Activity implements LoginInterface {
 
     @Override
     public void LoginAccount(String numberPhone, String passWord) {
+
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Server.pathLogin, null,
                 new Response.Listener<JSONArray>() {
@@ -107,7 +123,10 @@ public class LoginActivity extends Activity implements LoginInterface {
                                     JSONObject jsonObject = response.getJSONObject(i);
                                     userName = jsonObject.getString("sdt");
                                     pass = jsonObject.getString("pass");
-//                                userArrayList.add(new User(userName,pass));
+                                    id = jsonObject.getInt("idcustomer");
+                            //        MainActivity.idCustomer = Integer.parseInt(jsonObject.getString("makh"));
+                                  //  Log.e("id khách hàng", "id");
+                                    Toast.makeText(getApplicationContext(),id, Toast.LENGTH_SHORT).show();
                                     if (numberPhone.equals(userName) && passWord.equals(pass)) {
                                         LogInSuccess();
                                     } else if  (numberPhone.equals("012345678") && passWord.equals("012345678")) {

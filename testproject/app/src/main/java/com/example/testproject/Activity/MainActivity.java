@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     public static ArrayList<ItemCart> itemCartList;
+    public static int idCustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
