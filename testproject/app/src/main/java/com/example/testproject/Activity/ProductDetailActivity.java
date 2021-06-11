@@ -192,11 +192,16 @@ public class ProductDetailActivity extends AppCompatActivity {
                 quantity = quantity + 1;
                 edtQuatity.setText(quantity +"");
                 ChangeButon();
+                if(quantity >= 10 ){
+                    btn_add_in.setVisibility(View.GONE);
+                }
+
             }
         });
         btn_add_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_add_in.setVisibility(View.VISIBLE);
                 quantity = quantity - 1;
                 edtQuatity.setText(quantity +"");
                 ChangeButon();
