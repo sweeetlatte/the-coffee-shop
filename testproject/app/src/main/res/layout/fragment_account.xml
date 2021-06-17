@@ -136,6 +136,7 @@
     </TextView>
 
         <TextView
+            android:id="@+id/ord_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/profile_name"
@@ -147,5 +148,18 @@
             android:drawableEnd="@drawable/ic_arrow"
             android:drawableRight="@drawable/ic_arrow">
         </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ord_history"
+        android:layout_marginBottom="-65dp"
+        android:text="Log Out"
+        android:textSize="20sp"
+        android:textColor="@color/theme"
+        android:background="@drawable/duongvien_goctron"
+        android:drawableEnd="@drawable/ic_arrow"
+        android:drawableRight="@drawable/ic_arrow">
+    </TextView>
 
 </RelativeLayout>

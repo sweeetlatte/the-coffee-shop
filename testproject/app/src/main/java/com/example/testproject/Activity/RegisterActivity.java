@@ -140,11 +140,12 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     Log.d("madonhang", response);
                     if (response.equals("1"))  {
+                        Toast.makeText(getApplicationContext(),"Sign Up Successfully!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     } else {
                         //to-do
-                        Toast.makeText(getApplicationContext(),"Thông tin không hợp lệ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Invalid Information!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }, new Response.ErrorListener() {
