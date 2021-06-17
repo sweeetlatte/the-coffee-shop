@@ -29,8 +29,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:src="@drawable/res2">
+            android:layout_height="190dp">
         </ImageView>
     </androidx.cardview.widget.CardView>
 

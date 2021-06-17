@@ -31,9 +31,9 @@
     </TextView>
 
     <EditText
+        android:id="@+id/edtAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text2"
         android:layout_marginBottom="-49dp"
         android:hint="Type Your Address Here"/>
 
@@ -122,6 +122,7 @@
     </TextView>
 
     <Button
+        android:id="@+id/btn_checkout_checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="check out"

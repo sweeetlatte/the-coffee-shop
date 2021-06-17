@@ -77,10 +77,10 @@
     </TextView>
 
     <TextView
+        android:id="@+id/phone_number"
         android:layout_alignBottom="@+id/pro_last_name"
         android:layout_marginBottom="-60dp"
         android:background="@drawable/duongvien_goctron"
-        android:id="@+id/phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:digits="0123456789"

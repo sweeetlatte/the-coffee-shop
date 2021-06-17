@@ -4,13 +4,6 @@ CREATE TABLE KhachHang(
     SoDT VARCHAR(10),
     TrangThai BOOLEAN
 );
-CREATE TABLE HoaDon(
-    MaHD int AUTO_INCREMENT PRIMARY KEY,
-    MaKH  VARCHAR(255),
-    NgayHD DATE,
-    TongTien FLOAT
-);
-
 CREATE TABLE ThucDon(
     MaMon int AUTO_INCREMENT PRIMARY KEY,
     TenMon  VARCHAR(255),
@@ -23,15 +16,7 @@ CREATE TABLE Ban(
     MaBan int AUTO_INCREMENT PRIMARY KEY,
     TrangThai BOOLEAN
 );
-CREATE TABLE CTHD(
-    MaHD int ,
-    MaMon  int,
-    SoLuong int,
-    ThanhTien FLOAT,
-    FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD),
-    FOREIGN KEY (MaMon) REFERENCES ThucDon(MaMon),
-    PRIMARY KEY (MaHD, MaMon)
-);
+
 CREATE TABLE GioHang(
     MaKH int,
     MaMon int,
@@ -41,6 +26,26 @@ CREATE TABLE GioHang(
     FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH),
     FOREIGN KEY (MaMon) REFERENCES ThucDon(MaMon),
     PRIMARY KEY (MaKH, MaMon)
+);
+CREATE TABLE HoaDon(
+    MaHD int PRIMARY KEY,
+    MaKH  VARCHAR(255),
+    NgayHD DATE,
+    DiaChiGiao varchar(255), 
+    Ship int,
+    TongTien FLOAT
+);
+
+CREATE TABLE CTHD(
+    MaHD int ,
+    MaMon  int,
+    SoLuong int,
+    Gia float,
+    GhiChu varchar(255),
+    ThanhTien FLOAT,
+    FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD),
+    FOREIGN KEY (MaMon) REFERENCES ThucDon(MaMon),
+    PRIMARY KEY (MaHD, MaMon)
 );
 
 CREATE TABLE DatBan(

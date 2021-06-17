@@ -123,15 +123,11 @@ public class LoginActivity extends Activity implements LoginInterface {
                                     JSONObject jsonObject = response.getJSONObject(i);
                                     userName = jsonObject.getString("sdt");
                                     pass = jsonObject.getString("pass");
-                                    id = jsonObject.getInt("idcustomer");
-                            //        MainActivity.idCustomer = Integer.parseInt(jsonObject.getString("makh"));
-                                  //  Log.e("id khách hàng", "id");
-                                    Toast.makeText(getApplicationContext(),id, Toast.LENGTH_SHORT).show();
                                     if (numberPhone.equals(userName) && passWord.equals(pass)) {
+                                        MainActivity.phoneCustomer = userName;
+                                        MainActivity.passWord = pass;
                                         LogInSuccess();
-                                    } else if  (numberPhone.equals("012345678") && passWord.equals("012345678")) {
-                                        LogInSuccess();}
-                                    else Toast.makeText(getApplicationContext(),"Tài khoản không hợp lệ", Toast.LENGTH_SHORT).show();
+                                    }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
