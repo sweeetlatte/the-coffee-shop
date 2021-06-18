@@ -2,5 +2,5 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "thecoffeeshop";
+    $database = "TheCoffeeShop";
 ?>
