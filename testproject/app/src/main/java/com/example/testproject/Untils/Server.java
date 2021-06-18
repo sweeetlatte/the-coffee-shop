@@ -10,4 +10,5 @@ public class Server {
     public static String pathInsertUser = "http://" + localhost + "/TheCoffeeShop/register.php";
     public static String pathGetProfile = "http://" + localhost + "/TheCoffeeShop/getProfile.php";
     public static String pathInsertHoaDon = "http://" + localhost + "/TheCoffeeShop/insertHoaDon.php";
+    public static String pathInsertCTHD = "http://" + localhost + "/TheCoffeeShop/insertCTHD.php";
 }

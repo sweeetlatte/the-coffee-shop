@@ -96,6 +96,7 @@ public class LoginActivity extends Activity implements LoginInterface {
         tvMessage.setVisibility(view.VISIBLE);
         tvMessage.setText("Login success");
         tvMessage.setTextColor(R.color.success);
+//        GetInforAccount();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }

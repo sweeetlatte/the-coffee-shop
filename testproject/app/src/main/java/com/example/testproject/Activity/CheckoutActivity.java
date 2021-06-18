@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,7 +43,9 @@ public class CheckoutActivity extends Activity {
     ListView lvCheckOut;
     ItemCartAdapter adapter;
     int total = 0;
-    private String address;
+    private String address ;
+    private String checkOutTotal;
+    String mahd = "";
 
 
     @Override
@@ -52,7 +56,6 @@ public class CheckoutActivity extends Activity {
         EvenUntil();
         SumTotal();
     }
-
     private void SumTotal() {
    //     int ship = Integer.parseInt(tvCheckOutShip.getText().toString().trim()) ;
     //    int sum = total + ship;
@@ -79,30 +82,25 @@ public class CheckoutActivity extends Activity {
     }
 
     private void CheckOut() {
-        InsertHoaDon();
-    //    InsertCTHD();
-
-        Toast.makeText(getApplicationContext(),"Order thành công", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(getApplicationContext(), HomeFragment.class);
-//        startActivity(intent);
-
+        address = edtAddress.getText().toString();
+        if( address != null){
+            InsertHoaDon();
+        }
     }
 
-    private void InsertHoaDon() {
-        Toast.makeText(getApplicationContext(),"vô InsertHoaDon() ", Toast.LENGTH_SHORT).show();
-    //    address = edtAddress.getText().toString();
+    private void InsertHoaDon(){
         RequestQueue requestQueue = Volley.newRequestQueue(CheckoutActivity.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.pathInsertHoaDon, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(),"vô InsertHoaDon()2 ", Toast.LENGTH_SHORT).show();
-                Log.d("madonhang", response);
                 if (response.equals("0"))  {
+                    Toast.makeText(getApplicationContext(),"Địa chỉ không được để trống", Toast.LENGTH_SHORT).show();
+                } else {
+                    mahd = response;
+                    InsertCTHD(mahd);
+                    Toast.makeText(getApplicationContext(),"Order thành công", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
-                } else {
-                    //to-do
-                    Toast.makeText(getApplicationContext(),"Thông tin không hợp lệ", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -115,9 +113,9 @@ public class CheckoutActivity extends Activity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> hashMap = new HashMap<String, String>();
                 hashMap.put("makh",MainActivity.MaKH );
-                hashMap.put("diachi","address" );
+                hashMap.put("diachi",address);
  //               hashMap.put("ship",mNumber );
-                hashMap.put("tongtien",total+"" );
+                hashMap.put("tongtien",(total+ 10000) + "");
                 return hashMap;
             }
         };
@@ -125,7 +123,50 @@ public class CheckoutActivity extends Activity {
 
     }
 
-    private void InsertCTHD() {
+    private void InsertCTHD(String mahd) {
+        for(int i = 0; i < MainActivity.itemCartList.size(); i ++){
+            //Lấy thuộc tính để lưu vào db
+            String mamon = MainActivity.itemCartList.get(i).idProduct + "";
+            String soluong = MainActivity.itemCartList.get(i).quantity + "";
+            String gia = MainActivity.itemCartList.get(i).priceProduct + "";
+            String ghichu = MainActivity.itemCartList.get(i).topping + "";
+            String thanhtien = MainActivity.itemCartList.get(i).total + "";
+
+            // truyền xuống php để lưu vào db
+            RequestQueue requestQueue = Volley.newRequestQueue(CheckoutActivity.this);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.pathInsertCTHD, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d("madonhang", response);
+
+                    if (response.equals("0"))  {
+                        Toast.makeText(getApplicationContext(),"Thông tin không hợp lệ", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //to-do
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            }){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    HashMap<String, String> hashMap = new HashMap<String, String>();
+                    hashMap.put("mahd",mahd);
+                    hashMap.put("mamon",mamon);
+                    hashMap.put("soluong",soluong);
+                    hashMap.put("gia",gia);
+                    hashMap.put("ghichu",ghichu);
+                    hashMap.put("thanhtien",thanhtien);
+                    return hashMap;
+                }
+            };
+            requestQueue.add(stringRequest);
+            MainActivity.itemCartList.clear();
+
+        }
     }
 
     private void EvenUntil() {
@@ -136,7 +177,6 @@ public class CheckoutActivity extends Activity {
         tvCheckOutSum.setText(decimalFormat.format(total) + " VNĐ");
     }
 
-//    maKH, maHD, tongtien, diachi, phiship,
 
     
 }

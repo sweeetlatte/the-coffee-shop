@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
         if(itemCartList == null ){
             itemCartList = new ArrayList<>();
         }
+        GetMaKH();
 
     }
 
-    private void GetInforAccount() {
-    }
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod =
