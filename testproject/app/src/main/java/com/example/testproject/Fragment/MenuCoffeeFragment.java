@@ -102,7 +102,6 @@ public class MenuCoffeeFragment extends Fragment implements OnItemClickListener 
 
     @Override
     public void onItemClickListener(Product product){
-        Log.e("product trong home", product+"");
         Intent intent = new Intent(getContext(), ProductDetailActivity.class);
         intent.putExtra("Product",product);
         startActivity(intent);

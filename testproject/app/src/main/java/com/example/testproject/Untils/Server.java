@@ -1,7 +1,7 @@
 package com.example.testproject.Untils;
 
 public class Server {
-    public static String localhost = "192.168.0.106";
+    public static String localhost = "192.168.0.102";
     public static String pathLogin = "http://" + localhost + "/TheCoffeeShop/getUser.php";
     public static String pathGetNewProduct = "http://" + localhost + "/TheCoffeeShop/getNewProduct.php";
     public static String pathGetCoffeProduct = "http://" + localhost + "/TheCoffeeShop/getCoffeeProduct.php";
@@ -11,4 +11,5 @@ public class Server {
     public static String pathGetProfile = "http://" + localhost + "/TheCoffeeShop/getProfile.php";
     public static String pathInsertHoaDon = "http://" + localhost + "/TheCoffeeShop/insertHoaDon.php";
     public static String pathInsertCTHD = "http://" + localhost + "/TheCoffeeShop/insertCTHD.php";
+    public static String pathGetHD = "http://" + localhost + "/TheCoffeeShop/getHoaDon.php";
 }

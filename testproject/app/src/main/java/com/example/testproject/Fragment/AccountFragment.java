@@ -20,7 +20,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.testproject.Activity.LoginActivity;
 import com.example.testproject.Activity.MainActivity;
+import com.example.testproject.Activity.OrderHistoryActivity;
 import com.example.testproject.R;
 import com.example.testproject.Untils.Server;
 
@@ -41,7 +43,8 @@ public class AccountFragment extends Fragment {
     TextView pro_last_name;
     TextView password;
     TextView phone_number;
-
+    TextView tv_account_logout;
+    TextView tv_account_order_history;
 
 
 
@@ -69,7 +72,30 @@ public class AccountFragment extends Fragment {
         pro_last_name = (TextView) view.findViewById(R.id.pro_last_name);
         password = (TextView) view.findViewById(R.id.password);
         phone_number = (TextView) view.findViewById(R.id.phone_number);
+        tv_account_logout = (TextView) view.findViewById(R.id.tv_account_logout);
+        tv_account_order_history = (TextView) view.findViewById(R.id.tv_account_order_history);
+        tv_account_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogOut();
+            }
+        });
+        tv_account_order_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OrderHistory();
+            }
+        });
+    }
 
+    private void OrderHistory() {
+        Intent intent = new Intent(getContext(), OrderHistoryActivity.class);
+        startActivity(intent);
+    }
+
+    private void LogOut() {
+        Intent intent = new Intent(getContext(), LoginActivity.class);
+        startActivity(intent);
     }
 
     public void GetInforAccount() {
@@ -81,7 +107,6 @@ public class AccountFragment extends Fragment {
                 if (response!= null)  {
                     try {
                         JSONObject obj = new JSONObject(response);
-                        Log.d("jsson", obj.toString());
                         firstName = obj.getString("HoKH");
                         lastName = obj.getString("TenKH");
                         MainActivity.idCustomer = Integer.parseInt(obj.getString("MaKH"));
