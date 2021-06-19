@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     public static ArrayList<ItemCart> itemCartList;
     public static String phoneCustomer;
+    public static String firtNameCustomer;
+    public static String lastNameCustomer;
     public static int idCustomer;
     public static String passWord;
     public static String MaKH;
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             itemCartList = new ArrayList<>();
         }
         GetMaKH();
+        GetInforAccount();
 
     }
 
@@ -114,6 +117,42 @@ public class MainActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> hashMap = new HashMap<String, String>();
                 hashMap.put("numberPhone",phoneCustomer );
+                return hashMap;
+            }
+        };
+        requestQueue.add(stringRequest);
+
+    }
+    public void GetInforAccount() {
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.pathGetProfile, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (response!= null)  {
+                    try {
+                        JSONObject obj = new JSONObject(response);
+                        firtNameCustomer = obj.getString("HoKH");
+                        lastNameCustomer = obj.getString("TenKH");
+                        MainActivity.idCustomer = Integer.parseInt(obj.getString("MaKH"));
+                    } catch (JSONException e) {
+                        Log.d("Error", e.toString());
+                    }
+
+                } else {
+                    //to-do
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> hashMap = new HashMap<String, String>();
+                hashMap.put("numberPhone",MainActivity.phoneCustomer );
                 return hashMap;
             }
         };

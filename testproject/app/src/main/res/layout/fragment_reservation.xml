@@ -33,7 +33,7 @@
         </ImageView>
     </androidx.cardview.widget.CardView>
 
-    <EditText
+    <TextView
         android:id="@+id/res_first_name"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
         android:textColorHint="@color/lightCoffee"
         android:textSize="16sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/res_last_name"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
         android:textColorHint="@color/lightCoffee"
         android:textSize="16sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/res_phone_number"
         android:layout_alignBottom="@+id/res_last_name"
         android:layout_marginBottom="-55dp"
@@ -86,7 +86,7 @@
         android:textColor="@color/black"
         android:textColorHint="@color/lightCoffee"
         android:textSize="16sp" >
-    </EditText>
+    </TextView>
 
     <EditText
         android:id="@+id/res_date"

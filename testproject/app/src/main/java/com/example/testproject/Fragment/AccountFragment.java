@@ -36,8 +36,6 @@ import java.util.Map;
 
 public class AccountFragment extends Fragment {
     View view;
-    public String firstName;
-    public String lastName;
     TextView profile_name;
     TextView pro_first_name;
     TextView pro_last_name;
@@ -62,7 +60,7 @@ public class AccountFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_account, container, false);
         InitUI();
-        GetInforAccount();
+        ResetUI();
         return view;
     }
 
@@ -98,48 +96,12 @@ public class AccountFragment extends Fragment {
         startActivity(intent);
     }
 
-    public void GetInforAccount() {
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.pathGetProfile, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (response!= null)  {
-                    try {
-                        JSONObject obj = new JSONObject(response);
-                        firstName = obj.getString("HoKH");
-                        lastName = obj.getString("TenKH");
-                        MainActivity.idCustomer = Integer.parseInt(obj.getString("MaKH"));
-                        ResetUI(firstName, lastName);
-                    } catch (JSONException e) {
-                        Log.d("Error", e.toString());
-                    }
 
-                } else {
-                    //to-do
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String, String> hashMap = new HashMap<String, String>();
-                hashMap.put("numberPhone",MainActivity.phoneCustomer );
-                return hashMap;
-            }
-        };
-        requestQueue.add(stringRequest);
-
-    }
-
-    private void ResetUI(String firstName, String lastName) {
-        profile_name.setText(firstName + lastName);
-        pro_first_name.setText(firstName);
-        pro_last_name.setText(lastName);
+    private void ResetUI() {
+        profile_name.setText(MainActivity.firtNameCustomer + MainActivity.lastNameCustomer);
+        pro_first_name.setText(MainActivity.firtNameCustomer);
+        pro_last_name.setText(MainActivity.lastNameCustomer);
         phone_number.setText(MainActivity.phoneCustomer);
         password.setText(MainActivity.passWord);
 
