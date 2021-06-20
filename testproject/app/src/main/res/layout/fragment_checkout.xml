@@ -32,6 +32,7 @@
 
     <EditText
         android:id="@+id/edtAddress"
+        android:layout_alignBottom="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-49dp"

@@ -19,9 +19,8 @@ public class DetailOrderHistoryActivity extends Activity {
     }
 
     private void InitUI() {
-        tv = (TextView) findViewById(R.id.tv);
         Intent intent = new Intent();
         String product = (String) getIntent().getSerializableExtra("orderid");
-        tv.setText(product);
+//        tv.setText(product);
     }
 }
