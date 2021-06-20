@@ -73,7 +73,7 @@
             android:id="@+id/radio_a"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="L (+5.000đ)" />
+            android:text="L (+5,000 VNĐ)" />
 
         <RadioButton
             android:id="@+id/radio_b"
@@ -87,7 +87,7 @@
             android:id="@+id/radio_c"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="S (-5.000đ)"
+            android:text="S (-5,000 VNĐ)"
             android:layout_marginLeft="20dp"/>
 
     </RadioGroup>
@@ -116,37 +116,37 @@
             android:id="@+id/radio_1"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Ice cream (+5.000đ)" />
+            android:text="Ice cream (+5,000 VNĐ)" />
 
         <RadioButton
             android:id="@+id/radio_2"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Sweet syrup (+10.000đ)"/>
+            android:text="Sweet syrup (+10,000 VNĐ)"/>
 
         <RadioButton
             android:id="@+id/radio_3"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Vanilla (+5.000đ)" />
+            android:text="Vanilla (+5,000 VNĐ)" />
 
         <RadioButton
             android:id="@+id/radio_4"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Butter (+8.000đ)" />
+            android:text="Butter (+8,000 VNĐ)" />
 
         <RadioButton
             android:id="@+id/radio_5"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Spices (+5.000đ)"/>
+            android:text="Spices (+5,000 VNĐ)"/>
 
         <RadioButton
             android:id="@+id/radio_6"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Non-dairy milks (+5.000đ)" />
+            android:text="Non-dairy milks (+5,000 VNĐ)" />
 
     </RadioGroup>
 
@@ -204,7 +204,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="18dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="75dp"
             android:visibility="gone"
             android:background="@drawable/ic_remove">
         </Button>

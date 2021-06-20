@@ -60,7 +60,7 @@ public class CartActivity extends Activity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
                 builder.setTitle("Delete Order");
-                builder.setMessage("Do you really want to delete this order ?");
+                builder.setMessage("Do you really want to delete this order?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -87,7 +87,7 @@ public class CartActivity extends Activity {
                     Intent intent = new Intent(getApplicationContext(), CheckoutActivity.class);
                     startActivity(intent);
 
-                } else Toast.makeText(getApplicationContext(), "empty cart", Toast.LENGTH_SHORT).show();
+                } else Toast.makeText(getApplicationContext(), "Empty Cart!", Toast.LENGTH_SHORT).show();
             }
         });
     }

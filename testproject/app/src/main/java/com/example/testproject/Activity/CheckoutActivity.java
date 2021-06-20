@@ -94,11 +94,11 @@ public class CheckoutActivity extends Activity {
             @Override
             public void onResponse(String response) {
                 if (response.equals("0"))  {
-                    Toast.makeText(getApplicationContext(),"Địa chỉ không được để trống", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Please Enter a Valid Address", Toast.LENGTH_SHORT).show();
                 } else {
                     mahd = response;
                     InsertCTHD(mahd);
-                    Toast.makeText(getApplicationContext(),"Order thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Order Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
@@ -140,7 +140,7 @@ public class CheckoutActivity extends Activity {
                     Log.d("madonhang", response);
 
                     if (response.equals("0"))  {
-                        Toast.makeText(getApplicationContext(),"Thông tin không hợp lệ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Invalid Information", Toast.LENGTH_SHORT).show();
                     } else {
                         //to-do
                     }
