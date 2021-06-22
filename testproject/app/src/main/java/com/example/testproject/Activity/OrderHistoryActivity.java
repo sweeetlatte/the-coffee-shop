@@ -95,6 +95,7 @@ public class OrderHistoryActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), DetailOrderHistoryActivity.class);
                 intent.putExtra("orderid",arrayListItem.get(position).getOrderid());
+                Toast.makeText(getApplicationContext(),arrayListItem.get(position).getOrderid(), Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

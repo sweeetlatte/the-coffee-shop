@@ -89,7 +89,7 @@
         android:textSize="16sp" >
     </TextView>
 
-    <EditText
+    <TextView
         android:id="@+id/res_date"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
@@ -99,14 +99,13 @@
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="01/06/2021"
-        android:inputType="date"
         android:padding="10dp"
         android:singleLine="true"
         android:textColor="@color/black"
         android:textColorHint="@color/lightCoffee"
         android:textSize="16sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/res_time"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
@@ -125,7 +124,7 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/res_quantity2"
+        android:id="@+id/edtNumberOfPeople"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/res_time"
@@ -142,10 +141,10 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/res_note2"
+        android:id="@+id/edtMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/res_quantity2"
+        android:layout_alignBottom="@+id/edtNumberOfPeople"
         android:layout_marginBottom="-55dp"
         android:background="@drawable/duongvien_goctron"
         android:drawablePadding="8dp"
@@ -159,8 +158,8 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/signupBtn"
-        android:layout_alignBottom="@+id/res_note2"
+        android:id="@+id/btnReservation"
+        android:layout_alignBottom="@+id/edtMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-68dp"

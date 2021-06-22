@@ -49,14 +49,13 @@ CREATE TABLE CTHD(
 );
 
 CREATE TABLE DatBan(
+    MaDB  int AUTO_INCREMENT PRIMARY KEY,
     MaKH int,
-    MaBan  int,
     NgayDat DATETIME,
-    FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH),
-    FOREIGN KEY (MaBan) REFERENCES Ban(MaBan),
-    PRIMARY KEY (MaKH, MaBan)
-);
-
+    SoNguoi int,
+    GhiChu varchar(255),
+    FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH)
+)
 CREATE TABLE Quyen(
     MaQuyen int AUTO_INCREMENT PRIMARY KEY,
     TenQuyen  VARCHAR(255)   

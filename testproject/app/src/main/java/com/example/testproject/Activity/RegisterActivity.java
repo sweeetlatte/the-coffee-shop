@@ -138,7 +138,7 @@ public class RegisterActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.pathInsertUser, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Log.d("madonhang", response);
+
                     if (response.equals("1"))  {
                         Toast.makeText(getApplicationContext(),"Sign Up Successfully!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
