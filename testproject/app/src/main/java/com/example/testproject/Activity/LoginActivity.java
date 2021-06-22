@@ -106,7 +106,7 @@ public class LoginActivity extends Activity implements LoginInterface {
     public void LogInError() {
         tvMessage.setVisibility(view.VISIBLE);
         tvMessage.setTextColor(R.color.red);
-        tvMessage.setText("Login failed");
+        tvMessage.setText("Login Failed");
 
     }
 

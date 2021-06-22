@@ -75,7 +75,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                 break;
             case R.id.radio_3:
                 tTopping = 5000;
-                strTopping = "vanila";
+                strTopping = "Vanila";
                 ChangeButon();
                 break;
             case R.id.radio_4:
