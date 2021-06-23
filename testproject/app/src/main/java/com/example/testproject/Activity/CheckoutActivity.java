@@ -98,6 +98,7 @@ public class CheckoutActivity extends Activity {
                 } else {
                     mahd = response;
                     InsertCTHD(mahd);
+                    MainActivity.itemCartList.clear();
                     Toast.makeText(getApplicationContext(),"Order Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
@@ -137,13 +138,11 @@ public class CheckoutActivity extends Activity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.pathInsertCTHD, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Log.d("madonhang", response);
-
-                    if (response.equals("0"))  {
-                        Toast.makeText(getApplicationContext(),"Invalid Information", Toast.LENGTH_SHORT).show();
-                    } else {
+//                    if (response.equals("0"))  {
+//                        Toast.makeText(getApplicationContext(),"Invalid Information", Toast.LENGTH_SHORT).show();
+//                    } else {
                         //to-do
-                    }
+//                    }
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -164,7 +163,6 @@ public class CheckoutActivity extends Activity {
                 }
             };
             requestQueue.add(stringRequest);
-            MainActivity.itemCartList.clear();
 
         }
     }
