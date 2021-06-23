@@ -12,6 +12,7 @@ public class Server {
     public static String pathInsertHoaDon = "http://" + localhost + "/TheCoffeeShop/insertHoaDon.php";
     public static String pathInsertCTHD = "http://" + localhost + "/TheCoffeeShop/insertCTHD.php";
     public static String pathGetHD = "http://" + localhost + "/TheCoffeeShop/getHoaDon.php";
+    public static String pathGetHDDetailOrderHistory = "http://" + localhost + "/TheCoffeeShop/getHoaDonDetailOrderHistory.php";
     public static String pathGetDetailOrderHistory = "http://" + localhost + "/TheCoffeeShop/getDetailOrderHistory.php";
     public static String pathGetDetailOrderHistoryProduct = "http://" + localhost + "/TheCoffeeShop/getDetailOrderHistoryProduct.php";
     public static String pathInsertDatBan = "http://" + localhost + "/TheCoffeeShop/insertDatBan.php";

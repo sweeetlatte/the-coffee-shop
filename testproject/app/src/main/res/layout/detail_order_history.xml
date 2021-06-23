@@ -21,12 +21,19 @@
         android:textColor="@color/theme">
     </TextView>
 
-
     <ListView
         android:id="@+id/lv_detail_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/tv_detail_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address Here"
+        android:textSize="18sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +53,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,12 +73,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"/>
     </LinearLayout>
-    <TextView
-        android:id="@+id/tv_detail_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Address Here"
-        android:textSize="18sp" />
+
 
 
 </LinearLayout>
