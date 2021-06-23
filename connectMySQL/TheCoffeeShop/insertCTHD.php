@@ -10,7 +10,7 @@
         $query = "insert into CTHD( MaHD, MaMon, SoLuong, Gia, GhiChu, ThanhTien) values ( ".$MaHD.",".$MaMon.", ".$SoLuong.", ".$gia.", '".$ghichu."',".$thanhtien." )";
         $mysqli -> query($query);
         $id = $mysqli -> insert_id;
-        echo $query;
+        echo $id;
     }
     
 ?>
