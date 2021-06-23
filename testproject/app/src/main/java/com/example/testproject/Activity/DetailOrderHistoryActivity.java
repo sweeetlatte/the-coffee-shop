@@ -36,8 +36,6 @@ public class DetailOrderHistoryActivity extends Activity {
     ItemCartAdapter adapter;
     ArrayList<ItemCart> list;
     public static String nameProduct, srcImgProduct;
-//    public static String name;
-//    public static String src;
     public static String priceProduct;
     public static String total;
     public static String topping;
@@ -110,8 +108,6 @@ public class DetailOrderHistoryActivity extends Activity {
                             quantity = jsonObject.getString("soluong");
                             productID = jsonObject.getString("mamon");
                             getInforProduct(productID);
-//                            name = DetailOrderHistoryActivity.nameProduct;
-//                            src = DetailOrderHistoryActivity.srcImgProduct;
 
                         }
                     } catch (JSONException e) {
