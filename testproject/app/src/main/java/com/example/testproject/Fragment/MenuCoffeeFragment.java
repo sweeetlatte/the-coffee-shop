@@ -58,7 +58,7 @@ public class MenuCoffeeFragment extends Fragment implements OnItemClickListener 
 
     private void GetDataMenuCoffee() {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Server.pathGetCoffeProduct, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Server.pathGetCoffeeProduct, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

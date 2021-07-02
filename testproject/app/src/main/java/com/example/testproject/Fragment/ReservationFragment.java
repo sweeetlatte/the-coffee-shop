@@ -1,10 +1,14 @@
 package com.example.testproject.Fragment;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +40,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.SimpleTimeZone;
@@ -162,22 +167,20 @@ public class ReservationFragment extends Fragment {
         int daycurrent = calendar.get(Calendar.DATE);
         int monthcurrent = calendar.get(Calendar.MONTH);
         int yearcurrent = calendar.get(Calendar.YEAR);
-        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                if(yearcurrent >= year) {
-                    if (monthcurrent >= month) {
-                        if (daycurrent >= dayOfMonth) {
-                            calendar.set(year, month, dayOfMonth);
-                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                            res_date.setText(simpleDateFormat.format(calendar.getTime()));
-                        } else {
-                            Toast.makeText(getContext(), "Ngày không hợp lệ", Toast.LENGTH_SHORT).show();
-                        }
+        DatePickerDialog datePickerDialog = new DatePickerDialog
+                (getContext(), new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        calendar.set(year, month, dayOfMonth);
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        res_date.setText(simpleDateFormat.format(calendar.getTime()));
                     }
-                }
-            }
-        },  yearcurrent, monthcurrent, daycurrent);
+                },  yearcurrent, monthcurrent, daycurrent);
+        calendar.add(Calendar.DATE, 30);
+        datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTime().getTime());
+        datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis());
+
         datePickerDialog.show();
     }
 }

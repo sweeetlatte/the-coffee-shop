@@ -24,8 +24,8 @@
         android:layout_alignBottom="@+id/res_layout_name"
         android:layout_marginBottom="-200dp"
         android:layout_width="wrap_content"
-        android:layout_height="185dp"
-        app:cardCornerRadius="15dp">
+        android:layout_height="170dp"
+        app:cardCornerRadius="20dp">
 
         <ImageView
             android:layout_width="match_parent"
