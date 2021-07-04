@@ -99,7 +99,7 @@ public class AccountFragment extends Fragment {
 
 
     private void ResetUI() {
-        profile_name.setText(MainActivity.firtNameCustomer + MainActivity.lastNameCustomer);
+        profile_name.setText(MainActivity.firtNameCustomer + " " + MainActivity.lastNameCustomer);
         pro_first_name.setText(MainActivity.firtNameCustomer);
         pro_last_name.setText(MainActivity.lastNameCustomer);
         phone_number.setText(MainActivity.phoneCustomer);
