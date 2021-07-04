@@ -119,7 +119,7 @@ public class ReservationFragment extends Fragment {
             public void onResponse(String response) {
                 Log.e("dmgj", response.toString());
                 if (!response.equals("0"))  {
-                    Toast.makeText(getContext(),"Reservation Successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Reservation Accepted", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     startActivity(intent);
                 } else {

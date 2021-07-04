@@ -30,8 +30,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/res2">
-        </ImageView>
+            android:src="@drawable/res2"></ImageView>
     </androidx.cardview.widget.CardView>
 
     <TextView
