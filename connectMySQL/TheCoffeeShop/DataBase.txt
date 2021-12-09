@@ -1,0 +1,108 @@
+CREATE TABLE KhachHang(
+    MaKH int AUTO_INCREMENT PRIMARY KEY,
+    TenKH  VARCHAR(255),
+    SoDT VARCHAR(10),
+    TrangThai BOOLEAN
+);
+CREATE TABLE HoaDon(
+    MaHD int AUTO_INCREMENT PRIMARY KEY,
+    MaKH  VARCHAR(255),
+    NgayHD DATE,
+    TongTien FLOAT
+);
+
+CREATE TABLE ThucDon(
+    MaMon int AUTO_INCREMENT PRIMARY KEY,
+    TenMon  VARCHAR(255),
+    SoLuong int,
+    TrangThai BOOLEAN,
+    Gia FLOAT,
+    TuyChon VARCHAR(255)
+);
+CREATE TABLE Ban(
+    MaBan int AUTO_INCREMENT PRIMARY KEY,
+    TrangThai BOOLEAN
+);
+CREATE TABLE CTHD(
+    MaHD int ,
+    MaMon  int,
+    SoLuong int,
+    ThanhTien FLOAT,
+    FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD),
+    FOREIGN KEY (MaMon) REFERENCES ThucDon(MaMon),
+    PRIMARY KEY (MaHD, MaMon)
+);
+CREATE TABLE GioHang(
+    MaKH int,
+    MaMon int,
+    SoLuong int,
+    TrangThai BOOLEAN,
+    TimeStamp VARCHAR(255),
+    FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH),
+    FOREIGN KEY (MaMon) REFERENCES ThucDon(MaMon),
+    PRIMARY KEY (MaKH, MaMon)
+);
+
+CREATE TABLE DatBan(
+    MaKH int,
+    MaBan  int,
+    NgayDat DATETIME,
+    FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH),
+    FOREIGN KEY (MaBan) REFERENCES Ban(MaBan),
+    PRIMARY KEY (MaKH, MaBan)
+);
+
+CREATE TABLE Quyen(
+    MaQuyen int AUTO_INCREMENT PRIMARY KEY,
+    TenQuyen  VARCHAR(255)   
+);
+CREATE TABLE TaiKhoan(
+    MaTK int AUTO_INCREMENT PRIMARY KEY,
+    SDT  VARCHAR(10),
+    PassWord VARCHAR(255),
+    MaQuyen int,
+    FOREIGN KEY (MaQuyen) REFERENCES Quyen(MaQuyen)
+);
+CREATE TABLE ChucVu(
+    MaCV int AUTO_INCREMENT PRIMARY KEY,
+    TenCV  VARCHAR(255)
+);
+CREATE TABLE NhanVien(
+    MaNV int AUTO_INCREMENT PRIMARY KEY,
+    TenNV  VARCHAR(255),
+    SDT VARCHAR(10),
+    DiaChi VARCHAR(255),
+    ChucVu int,
+    FOREIGN KEY (chucvu) REFERENCES ChucVu(MaCV)
+);
+CREATE TABLE NCC(
+    MaNCC int AUTO_INCREMENT PRIMARY KEY,
+    TenNCC  VARCHAR(255),
+    SDT VARCHAR(10),
+    DiaChi VARCHAR(255),
+    MaSP int,
+    FOREIGN KEY (MaSP) REFERENCES ThucDon(MaMon)
+);
+
+
+
+
+ALTER TABLE ChucVu ADD MaQuyen int;
+
+ALTER TABLE ChucVu ADD FOREIGN KEY(MaQuyen) REFERENCES Quyen(MaQuyen);
+
+ALTER TABLE hoadon
+MODIFY COLUMN MaKH INT;
+ALTER TABLE HoaDon ADD FOREIGN KEY(MaKH) REFERENCES KhachHang(MaKH);
+
+ALTER TABLE NhanVien ADD TaiKhoan int;
+ALTER TABLE  NhanVien ADD FOREIGN KEY(TaiKhoan) REFERENCES TaiKhoan(MaTK);
+
+CREATE TABLE LoaiSanPham(
+    MaLSP int  AUTO_INCREMENT PRIMARY KEY,
+    TenLSP varchar(40)
+)
+
+ALTER TABLE ThucDon ADD MaLSP int;
+ALTER TABLE ThucDon ADD FOREIGN KEY(MaLSP) REFERENCES LoaiSanPham(MaLSP);
+
